@@ -1,2 +1,2 @@
 # termpp
-Hier entstecht ein Projekt zu der Terminal configuration 
+Hier entsteht ein Projekt zu der Terminal configuration 
