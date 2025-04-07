@@ -21,7 +21,7 @@
           "leading_diamond": "\ue0b6",
 		  "trailing_diamond": "\ue0b0",
           "style": "diamond",
-          "template": " {{ .UserName }}@{{ .HostName }} ",
+          "template": " vhstack@github ",
           "type": "session"
         },
         {
@@ -42,6 +42,7 @@
 			"home_icon": "\ueb06",
             "folder_icon": "\ue5fe",
             "folder_separator_icon": "<foreground><#ffc000>/</>",
+            "_style": "full | agnoster | folder",
             "style": "full"
           },
           "style": "powerline",
