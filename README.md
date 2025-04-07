@@ -1,4 +1,4 @@
-# 🖥️ OModerne Terminal-Arbeitsumgebung unter Windows
+# 🖥️ Moderne Terminal-Arbeitsumgebung unter Windows
 
 Diese Anleitung beschreibt, wie du dir eine moderne, performante und 
 optisch ansprechende Terminal-Umgebung unter Windows aufbaust. Sie 
