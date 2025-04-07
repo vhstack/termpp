@@ -8,6 +8,8 @@ besteht aus:
 - einer **Nerd Font** (z. B. Cascadia Code NF)
 - einem modernen **Bash Prompt via Oh My Posh**
 
+![Screenshot](screenshot.png)
+
 ---
 
 ## 📦 Terminalwahl: Windows Terminal
