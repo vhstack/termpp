@@ -1,0 +1,119 @@
+{
+  "$schema": "https://github.com/vhstack/termpp/vhstack.omp.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+		{
+          "style": "plain",
+          "template": "\n",
+          "type": "text"
+        },
+		{
+          "foreground": "#354a5a",
+          "style": "plain",
+          "template": "\u256d\u2500",
+          "type": "text"
+        },
+        {
+          "background": "#36424b",
+          "foreground": "#6cf7f7",
+          "leading_diamond": "\ue0b6",
+		  "trailing_diamond": "\ue0b0",
+          "style": "diamond",
+          "template": " {{ .UserName }}@{{ .HostName }} ",
+          "type": "session"
+        },
+        {
+          "background": "#ef5350",
+          "foreground": "#FFFB38",
+          "properties": {
+            "root_icon": "\uf292"
+          },
+          "style": "diamond",
+          "template": "<parentBackground>\ue0b0</> \uf0e7 ",
+          "type": "root"
+        },
+        {
+          "background": "#36424b",
+          "foreground": "#ffaf00",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+			"home_icon": "\ueb06",
+            "folder_icon": "\ue5fe",
+            "folder_separator_icon": "<foreground><#ffc000>/</>",
+            "style": "full"
+          },
+          "style": "powerline",
+          "template": " \uea83 {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "background": "#87d787",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#ffeb95{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#d78793{{ end }}",
+            "{{ if gt .Ahead 0 }}#C792EA{{ end }}",
+            "{{ if gt .Behind 0 }}#C792EA{{ end }}"
+          ],
+          "foreground": "#011627",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "powerline",
+          "template": " {{ .HEAD }} {{ if .Working.Changed }}{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#ef5350> \uf046 {{ .Staging.String }}</>{{ end }} ",
+          "type": "git"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+		{
+		  "foreground": "#87afaf",
+		  "properties": {
+			"threshold": 500,
+			"always_enabled": false
+		  },
+          "style": "diamond",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#ef5350{{ end }}"
+          ],
+		  "template": " \ue641 {{ .FormattedMs }} ",
+		  "type": "executiontime"
+		}
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#354a5a",
+          "style": "plain",
+          "template": "\u2570\u2500",
+          "type": "text"
+        },
+        {
+          "foreground": "#98c379",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#ef5350{{ end }}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "\u276f ",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "version": 3
+}
