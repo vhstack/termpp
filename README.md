@@ -159,6 +159,7 @@ Mit dieser Umgebung hast du ein schlankes, schnelles und optisch
 ansprechendes Setup für deine tägliche Arbeit.
 
 Alle Teile sind modular anpassbar – Themes, Schriftarten, Tastenkürzel, Farben.  
+
 👉 **Dein Terminal. Dein Workflow. Dein Stil.**
 
 Viel Spaß beim Einrichten – und happy hacking! 🚀
