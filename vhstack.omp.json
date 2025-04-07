@@ -21,7 +21,7 @@
           "leading_diamond": "\ue0b6",
 		  "trailing_diamond": "\ue0b0",
           "style": "diamond",
-          "template": " vhstack@github ",
+          "template": " {{ .UserName }}@{{ .HostName }} ",
           "type": "session"
         },
         {
