@@ -1,12 +1,12 @@
 #!/bin/bash
 
 #
-#   Diese Datei gibt eine Reihe von 24-Bit-Farbwerten
-#   im Terminal aus, um dessen Funktionalität zu testen.
-#   Die Escape-Sequenz für die Vordergrundfarbe ist ^[38;2;<r>;<g>;<b>m
-#   Die Escape-Sequenz für die Hintergrundfarbe ist ^[48;2;<r>;<g>;<b>m
-#   <r> <g> <b> liegen jeweils im Bereich von 0 bis einschließlich 255.
-#   Die Escape-Sequenz ^[0m setzt die Ausgabe auf den Standard zurück.
+# Diese Datei gibt eine Reihe von 24-Bit-Farbwerten
+# im Terminal aus, um dessen Funktionalität zu testen.
+# Die Escape-Sequenz für die Vordergrundfarbe ist ^[38;2;<r>;<g>;<b>m
+# Die Escape-Sequenz für die Hintergrundfarbe ist ^[48;2;<r>;<g>;<b>m
+# <r> <g> <b> liegen jeweils im Bereich von 0 bis einschließlich 255.
+# Die Escape-Sequenz ^[0m setzt die Ausgabe auf den Standard zurück.
 setBackgroundColor()
 {
     echo -en "\x1b[48;2;$1;$2;$3""m"
