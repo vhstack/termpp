@@ -106,8 +106,6 @@ export TERM=xterm-256color
 
 > Hinweis: Auch `tmux-256color` oder `screen-256color` funktionieren, wenn dein Terminal True Color unterstützt.
 
----
-
 ### 🧪 Farbdarstellung testen
 
 Mit dem Shellscript [`truecolor-test.sh`](./truecolor-test.sh) kannst du prüfen, ob dein Terminal echte 24-Bit-Farben korrekt darstellt.  
@@ -119,17 +117,15 @@ Einfach ausführen:
 
 Das Skript erzeugt einen weichen Farbverlauf. Falls dein Terminal **nur 256 Farben** unterstützt, erscheinen sichtbare Farbstufen – bei **echtem True Color** ist der Verlauf glatt.
 
----
-
 ### 🖼️ Beispielhafte Darstellung
 
 Die 256-Farben-Version zeigt harte Übergänge, während True Color einen stufenlosen Verlauf bietet.
 
 **256 Farben (xterm-256color mit 8-bit Fallback):**  
-![256 Farben Screenshot](screens/screenshot-256color.png)
+![256 Farben Screenshot](screenshot-256color.png)
 
 **True Color (24-bit Darstellung):**  
-![True Color Screenshot](screens/screenshot-truecolor.png)
+![True Color Screenshot](screenshot-truecolor.png)
 
 ---
 ## 💠 Bash Prompt mit Oh My Posh auf dem Remote-Server
