@@ -93,7 +93,46 @@ von Neovim und TMux abgestimmt.
 
 ---
 
-## 🎨 Bash Prompt mit Oh My Posh auf dem Remote-Server
+## 🎨 True Color Unterstützung
+
+### ✅ TERM-Variable setzen
+
+Stelle sicher, dass die Umgebungsvariable `TERM` auf `xterm-256color` gesetzt ist.  
+Füge dazu z. B. in `.bashrc`, `.zshrc` oder `.profile` folgende Zeile ein:
+
+```bash
+export TERM=xterm-256color
+```
+
+> Hinweis: Auch `tmux-256color` oder `screen-256color` funktionieren, wenn dein Terminal True Color unterstützt.
+
+---
+
+### 🧪 Farbdarstellung testen
+
+Mit dem Shellscript [`truecolor-test.sh`](./truecolor-test.sh) kannst du prüfen, ob dein Terminal echte 24-Bit-Farben korrekt darstellt.  
+Einfach ausführen:
+
+```bash
+./truecolor-test.sh
+```
+
+Das Skript erzeugt einen weichen Farbverlauf. Falls dein Terminal **nur 256 Farben** unterstützt, erscheinen sichtbare Farbstufen – bei **echtem True Color** ist der Verlauf glatt.
+
+---
+
+### 🖼️ Beispielhafte Darstellung
+
+Die 256-Farben-Version zeigt harte Übergänge, während True Color einen stufenlosen Verlauf bietet.
+
+**256 Farben (xterm-256color mit 8-bit Fallback):**  
+![256 Farben Screenshot](screens/screenshot-256color.png)
+
+**True Color (24-bit Darstellung):**  
+![True Color Screenshot](screens/screenshot-truecolor.png)
+
+---
+## 💠 Bash Prompt mit Oh My Posh auf dem Remote-Server
 
 Ein informatives, modernes Bash Prompt ist Gold wert. 
 Mit **Oh My Posh** erhältst du:
