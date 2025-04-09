@@ -8,7 +8,7 @@ besteht aus:
 - einer **Nerd Font** (z. B. Cascadia Code NF)
 - einem modernen **Bash Prompt via Oh My Posh**
 
-![Screenshot](screenshot.jpg)
+![Screenshot](assets/screenshot.jpg)
 
 ---
 
@@ -122,10 +122,10 @@ Das Skript erzeugt einen weichen Farbverlauf. Falls dein Terminal **nur 256 Farb
 Die 256-Farben-Version zeigt harte Übergänge, während True Color einen stufenlosen Verlauf bietet.
 
 **256 Farben (xterm-256color mit 8-bit Fallback):**  
-![256 Farben Screenshot](screenshot-256color.png)
+![256 Farben Screenshot](assets/screenshot-256color.png)
 
 **True Color (24-bit Darstellung):**  
-![True Color Screenshot](screenshot-truecolor.png)
+![True Color Screenshot](assets/screenshot-truecolor.png)
 
 ---
 ## 💠 Bash Prompt mit Oh My Posh auf dem Remote-Server
