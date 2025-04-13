@@ -167,7 +167,7 @@ curl -L https://raw.githubusercontent.com/vhstack/termpp/main/vhstack.omp.json -
 2. Ergänze in `.bashrc` oder `.bash_profile`:
 
 ```bash
-eval "$(.local/bin/oh-my-posh init bash --config ~/.config/ohmyposh/vhstack.omp.json)"
+eval "$(~/.local/bin/oh-my-posh init bash --config ~/.config/ohmyposh/vhstack.omp.json)"
 ```
 
 3. Lade die Bash neu:
