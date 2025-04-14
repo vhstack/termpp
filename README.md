@@ -128,7 +128,7 @@ Die 256-Farben-Version zeigt harte Übergänge, während True Color einen stufen
 ![True Color Screenshot](assets/screenshot-truecolor.png)
 
 ---
-## 💠 Bash Prompt mit Oh My Posh auf dem Remote-Server
+## 💠 Shell Prompt mit Oh My Posh auf dem Remote-Server
 
 Ein informatives, modernes Bash Prompt ist Gold wert. 
 Mit **Oh My Posh** erhältst du:
@@ -139,7 +139,31 @@ Mit **Oh My Posh** erhältst du:
 
 > Wichtig: Die Einrichtung erfolgt **nur auf dem Remote-Server unter Bash**, **nicht lokal**.
 
-### 🛠️ Installation auf dem Remote-Server (Linux)
+### ⚡ Schnelle Installation
+
+Du kannst `vhstack` Konfiguration automatisch installieren, indem du folgendes Skript herunterlädst oder direkt ausführst:
+
+📥 [Installationsskript herunterladen](https://raw.githubusercontent.com/vhstack/termpp/main/install-termpp.sh)
+
+Alternativ direkt im Terminal ausführen (Bash oder Zsh):
+
+```bash
+curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-termpp.sh | bash
+```
+
+```zsh
+curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-termpp.sh | zsh
+```
+
+🔧 Das Skript übernimmt automatisch:
+
+- 📦 Installation von **Oh My Posh** (falls noch nicht vorhanden)
+- 📁 Kopieren des Themes `vhstack.omp.json` nach `~/.config/ohmyposh/`
+- ✍️ Ergänzen deiner `~/.bashrc` oder `~/.zshrc` mit der passenden Init-Zeile
+
+> 💡 **Tipp:** Nach der Installation einmal `. ~/.bashrc` oder `. ~/.zshrc` ausführen – oder das Terminal neu starten.
+
+### 🛠️ Manuelle Installation
 
 ```bash
 curl -s https://ohmyposh.dev/install.sh | bash -s
