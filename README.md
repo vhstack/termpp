@@ -112,7 +112,7 @@ Mit dem Shellscript [`truecolor-test.sh`](./truecolor-test.sh) kannst du prüfen
 Einfach ausführen:
 
 ```bash
-./truecolor-test.sh
+curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/truecolor-test.sh | bash
 ```
 
 Das Skript erzeugt einen weichen Farbverlauf. Falls dein Terminal **nur 256 Farben** unterstützt, erscheinen sichtbare Farbstufen – bei **echtem True Color** ist der Verlauf glatt.
