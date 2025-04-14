@@ -35,6 +35,8 @@ fi
 INIT_LINE='eval "$(~/.local/bin/oh-my-posh init '"$SHELL_NAME"' --config ~/.config/ohmyposh/vhstack.omp.json)"'
 
 if ! grep -Fxq "$INIT_LINE" "$RC_FILE"; then
+  echo "" >> "$RC_FILE"
+  echo "# oh-my-posh vhstack/termpp theme" >> "$RC_FILE"
   echo "$INIT_LINE" >> "$RC_FILE"
   echo "✅ Oh My Posh Init-Zeile wurde zu $RC_FILE hinzugefügt."
 else
