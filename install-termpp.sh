@@ -5,6 +5,7 @@ set -e
 # 1. Installiere Oh My Posh, falls noch nicht vorhanden
 if ! command -v oh-my-posh &> /dev/null; then
   echo "Installiere Oh My Posh..."
+  mkdir -p ~/.local/bin
   curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.local/bin
 fi
 
