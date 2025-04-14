@@ -161,7 +161,7 @@ curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-termpp.sh
 - 📁 Kopieren des Themes `vhstack.omp.json` nach `~/.config/ohmyposh/`
 - ✍️ Ergänzen deiner `~/.bashrc` oder `~/.zshrc` mit der passenden Init-Zeile
 
-> 💡 **Tipp:** Nach der Installation einmal `. ~/.bashrc` oder `. ~/.zshrc` ausführen – oder das Terminal neu starten.
+> 💡 **Tipp:** Nach der Installation einmal `source ~/.bashrc` oder `source ~/.zshrc` ausführen – oder das Terminal neu starten.
 
 ### 🛠️ Manuelle Installation
 
@@ -188,7 +188,7 @@ mkdir -p ~/.config/ohmyposh
 curl -L https://raw.githubusercontent.com/vhstack/termpp/main/vhstack.omp.json -o .config/ohmyposh/vhstack.omp.json
 ```
 
-2. Ergänze in `.bashrc` oder `.bash_profile`:
+2. Ergänze in `~/.bashrc` oder `~/.zshrc`:
 
 ```bash
 eval "$(~/.local/bin/oh-my-posh init bash --config ~/.config/ohmyposh/vhstack.omp.json)"
