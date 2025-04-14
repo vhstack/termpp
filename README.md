@@ -176,22 +176,22 @@ Oder nachlesen:
 
 ## 🎨 Theme-Konfiguration für Oh My Posh
 
-Verwende das Theme `vhstack-omp.json` oder ein beliebiges anderes 
+Verwende das Theme `vhstack.omp.json` oder ein beliebiges anderes 
 nach deinem Geschmack.
 
 ### ✅ Schritte:
 
-1. Kopiere `vhstack-omp.json` auf den Server, z. B.:
+1. Kopiere `vhstack.omp.json` auf dem Server in das Verzeichnis `~/.config/ohmyposh`:
 
 ```bash
 mkdir -p ~/.config/ohmyposh
-scp vhstack-omp.json user@server:~/.config/ohmyposh/
+curl -L https://raw.githubusercontent.com/vhstack/termpp/main/vhstack.omp.json -o .config/ohmyposh/vhstack.omp.json
 ```
 
 2. Ergänze in `.bashrc` oder `.bash_profile`:
 
 ```bash
-eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/vhstack-omp.json)"
+eval "$(~/.local/bin/oh-my-posh init bash --config ~/.config/ohmyposh/vhstack.omp.json)"
 ```
 
 3. Lade die Bash neu:
