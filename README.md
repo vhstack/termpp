@@ -212,6 +212,7 @@ Dein Shell-Prompt wird nun automatisch bei jeder Anmeldung (login) geladen.
 ## 📎 Nützliche Links
 
 - 💻 [Windows Terminal GitHub](https://github.com/microsoft/terminal)
+- 🔤 [Microsoft Cascadia Font](https://github.com/microsoft/cascadia-code)
 - 🔤 [Nerd Fonts Übersicht](https://www.nerdfonts.com/font-downloads)
 - 🖌️ [Oh My Posh Dokumentation](https://ohmyposh.dev/)
 
