@@ -39,9 +39,9 @@ Windows Terminal ist kostenlos über den Microsoft Store verfügbar:
 Damit Icons, Git-Symbole und hübsche Prompt-Elemente korrekt angezeigt 
 werden, brauchst du eine **Nerd Font**. Ich empfehle:
 
-### 💎 Cascadia Code Nerd Font
+### 💎 Cascadia Code NF
 
-➡️ [Download auf nerdfonts.com](https://www.nerdfonts.com/font-downloads)
+➡️ [Download auf github.com](https://github.com/microsoft/cascadia-code)
 
 Vorteile:
 
@@ -63,6 +63,11 @@ Vorteile:
 | `==`     | ═                      |
 | `===`    | ≡                      |
 | `<=`     | ≤                      |
+
+
+Alternativ kannst du einen Nerd Font installieren, der deinen persönlichen Vorlieben entspricht.
+
+➡️ [Download auf nerdfonts.com](https://www.nerdfonts.com/font-downloads)
 
 ---
 
