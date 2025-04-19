@@ -124,7 +124,7 @@
         "defaults": 
         {
             "backgroundImage": "https://github.com/vhstack/termpp/blob/main/assets/vhstack.bg.jpg",
-            "colorScheme": "One Half Dark",
+			"colorScheme": "Catppuccin Mocha",
             "font": 
             {
                 "face": "Cascadia Code NF^"
@@ -154,28 +154,28 @@
     },
     "schemes": 
     [
-        {
-            "background": "#1E1F29",
-            "black": "#000000",
-            "blue": "#BD93F9",
-            "brightBlack": "#555555",
-            "brightBlue": "#BD93F9",
-            "brightCyan": "#8BE9FD",
-            "brightGreen": "#50FA7B",
-            "brightPurple": "#FF79C6",
-            "brightRed": "#FF5555",
-            "brightWhite": "#FFFFFF",
-            "brightYellow": "#F1FA8C",
-            "cursorColor": "#BBBBBB",
-            "cyan": "#8BE9FD",
-            "foreground": "#F8F8F2",
-            "green": "#50FA7B",
-            "name": "Dracula",
-            "purple": "#FF79C6",
-            "red": "#FF5555",
-            "selectionBackground": "#44475A",
-            "white": "#BBBBBB",
-            "yellow": "#F1FA8C"
+		{
+            "background": "#1E1E2E",
+            "black": "#45475A",
+            "blue": "#89B4FA",
+            "brightBlack": "#585B70",
+            "brightBlue": "#89B4FA",
+            "brightCyan": "#94E2D5",
+            "brightGreen": "#A6E3A1",
+            "brightPurple": "#F5C2E7",
+            "brightRed": "#F38BA8",
+            "brightWhite": "#A6ADC8",
+            "brightYellow": "#F9E2AF",
+            "cursorColor": "#F5E0DC",
+            "cyan": "#94E2D5",
+            "foreground": "#CDD6F4",
+            "green": "#A6E3A1",
+            "name": "Catppuccin Mocha",
+            "purple": "#F5C2E7",
+            "red": "#F38BA8",
+            "selectionBackground": "#585B70",
+            "white": "#BAC2DE",
+            "yellow": "#F9E2AF"
         }
     ],
     "themes": [],
