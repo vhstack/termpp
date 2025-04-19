@@ -82,6 +82,31 @@ Die Anpassung erfolgt über die Datei `settings.json`.
 3. Klicke auf „Einstellungen (JSON-Datei öffnen)“
 4. Ersetze oder ergänze den Inhalt mit deiner Konfiguration
 
+Du kannst in der `settings.json` Datei von Windows Terminal eigene SSH-Profile unter 
+`profiles.list[]` definieren, mit denen du dich entweder per Public-Key oder Passwort 
+auf entfernte Server verbinden kannst.
+
+```json
+{
+    "commandline": "ssh benutzername@serveradresse",
+    "hidden": false,
+    "icon": "\ud83d\udda5",
+    "name": "Mein SSH Server"
+}
+```
+
+Falls du einen spezifischen SSH-Schlüssel verwenden möchtest, kannst du diesen in der Konfiguration angeben:
+```json
+"commandline": "ssh -i ~/.ssh/id_ed25519 benutzername@serveradresse"
+```
+
+👉 SSH-Schlüssel erzeugen:
+
+Einen neuen Schlüssel erzeugst du mit folgendem Befehl:
+```sh
+ssh-keygen -t ed25519 -C "dein-kommentar"
+```
+
 ### ⌨️ Tastenkürzel
 
 | Tastenkombination     | Funktion                               |

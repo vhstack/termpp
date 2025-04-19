@@ -133,24 +133,20 @@
         },
         "list": 
         [
-            {
+			{
                 "bellStyle": "taskbar",
-                "commandline": "ssh -i ~/.ssh/id_ecdsa hostname -X",
-                "guid": "{514ce364-464f-5114-a0c0-50de879bbbb0}",
-                "hidden": false,
-                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
-                "name": "hostname",
-                "tabTitle": "hostname"
-            },
+				"commandline": "ssh benutzername@serveradresse",
+				"hidden": false,
+				"icon": "\ud83d\udda5",
+				"name": "Mein SSH Server"
+			},
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
             },
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Eingabeaufforderung"
             }
