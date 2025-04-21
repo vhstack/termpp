@@ -171,7 +171,7 @@ Mit **Oh My Posh** erhältst du:
 
 ### ⚡ Schnelle Installation
 
-Du kannst das vhstack-Prompt-Theme automatisch installieren, indem du folgendes Skript herunterlädst oder direkt ausführst:
+Du kannst das vhstack-Prompt-Theme automatisch installieren, indem du folgendes Skript herunterlädst und startest:
 
 📥 [Installationsskript herunterladen](https://raw.githubusercontent.com/vhstack/termpp/main/install-termpp.sh)
 
@@ -224,7 +224,7 @@ curl -L https://raw.githubusercontent.com/vhstack/termpp/main/vhstack.omp.json -
 eval "$(~/.local/bin/oh-my-posh init bash --config ~/.config/ohmyposh/vhstack.omp.json)"
 ```
 
-3. Lade die Bash neu:
+3. Lade die Shell-Konfiguration neu:
 
 ```bash
 . ~/.bashrc
