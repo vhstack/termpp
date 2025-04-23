@@ -238,10 +238,9 @@ Your prompt will load automatically on login.
 
 ---
 
-## 🧠 Final Words
+## 🎯 Final Words
 
 This setup gives you a sleek, fast, and visually pleasing environment for daily work.
-
 All components are modular—customize themes, fonts, keybindings, and colors.
 
 Enjoy your new setup and happy hacking! 🚀
