@@ -4,7 +4,7 @@ set -e
 
 # 1. Installiere Oh My Posh, falls noch nicht vorhanden
 if ! command -v oh-my-posh &> /dev/null; then
-  echo "Installiere Oh My Posh..."
+  echo "Install Oh My Posh..."
   mkdir -p ~/.local/bin
   curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.local/bin
 fi
@@ -21,27 +21,27 @@ if [ "$SHELL_NAME" = "zsh" ]; then
 elif [ "$SHELL_NAME" = "bash" ]; then
   RC_FILE=~/.bashrc
 else
-  echo "⚠️  Nicht unterstützte Shell: $SHELL_NAME – bitte manuell konfigurieren."
+  echo "⚠️  Unsupported shell: $SHELL_NAME – please configure manually."
   exit 1
 fi
 
 # 4. Prüfe, ob bereits irgendein oh-my-posh-Eintrag existiert
 if grep -q "oh-my-posh init" "$RC_FILE"; then
-  echo "ℹ️  Ein oh-my-posh init-Aufruf wurde bereits in $RC_FILE gefunden. Bitte passe deine Konfiguration manuell an."
+  echo "ℹ️  An oh-my-posh init call was already found in $RC_FILE. Please adjust your configuration manually."
   exit 0
 fi
 
 # 5. Füge die eval-Zeile nur hinzu, wenn sie noch nicht existiert
 INIT_LINE='eval "$(~/.local/bin/oh-my-posh init '"$SHELL_NAME"' --config ~/.config/ohmyposh/vhstack.omp.json)"'
 
+# 6. Konfiguriere vhstack-Theme
 if ! grep -Fxq "$INIT_LINE" "$RC_FILE"; then
   echo "" >> "$RC_FILE"
   echo "# oh-my-posh vhstack/termpp theme" >> "$RC_FILE"
   echo "$INIT_LINE" >> "$RC_FILE"
-  echo "✅ Oh My Posh Init-Zeile wurde zu $RC_FILE hinzugefügt."
+  echo "✅ Oh My Posh init line has been added to $RC_FILE."
 else
-  echo "ℹ️  Init-Zeile bereits in $RC_FILE vorhanden."
+  echo "ℹ️  Init line already present in $RC_FILE."
 fi
 
-echo "🚀 Fertig! Starte eine neue $SHELL_NAME-Sitzung oder führe 'source $RC_FILE' aus."
-
+echo "🚀 All done! Start a new $SHELL_NAME session or run 'source $RC_FILE'."
