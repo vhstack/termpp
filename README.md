@@ -247,7 +247,7 @@ Dein Shell-Prompt wird nun automatisch bei jeder Anmeldung (login) geladen.
 
 ---
 
-## 🧠 Schlusswort
+## 🎯 Schlusswort
 
 Mit dieser Umgebung hast du ein schlankes, schnelles und optisch 
 ansprechendes Setup für deine tägliche Arbeit.
