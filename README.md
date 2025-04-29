@@ -138,8 +138,6 @@ Füge dazu z. B. in `.bashrc`, `.zshrc` oder `.profile` folgende Zeile ein:
 export TERM=xterm-256color
 ```
 
-> Hinweis: Auch `tmux-256color` oder `screen-256color` funktionieren, wenn dein Terminal True Color unterstützt.
-
 ### 🧪 Farbdarstellung testen
 
 Mit dem Shellscript [`truecolor-test.sh`](./truecolor-test.sh) kannst du prüfen, ob dein Terminal echte 24-Bit-Farben korrekt darstellt.  

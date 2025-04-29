@@ -130,8 +130,6 @@ Ensure `TERM` is set to `xterm-256color`. Add to `.bashrc`, `.zshrc`, or `.profi
 export TERM=xterm-256color
 ```
 
-> Note: `tmux-256color` or `screen-256color` also work if your terminal supports true color.
-
 ### 🧪 Test Color Rendering
 
 Use the `truecolor-test.sh` script to verify true 24-bit color support:
