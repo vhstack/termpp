@@ -39,7 +39,7 @@
           "foreground": "#ffaf00",
           "powerline_symbol": "\ue0b0",
           "properties": {
-			"home_icon": "\ueb06",
+			"home_icon": "\ueb06 ",
             "folder_icon": "\ue5fe",
             "folder_separator_icon": "<foreground><#ffc000>/</>",
             "_style": "full | agnoster | folder",
