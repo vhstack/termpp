@@ -139,7 +139,6 @@
     {
         "defaults": 
         {
-            "backgroundImage": "https://github.com/vhstack/termpp/blob/main/assets/vhstack.bg.jpg",
 			"colorScheme": "Catppuccin Mocha",
             "font": 
             {
