@@ -108,7 +108,7 @@ ssh-keygen -t ed25519 -C "ваш комментарий"
    [Download auf www.straightrunning.com](http://www.straightrunning.com/XmingNotes)
 После установки дисплей перенаправляется в систему Linux с помощью X11-переадресации с использованием ключа `-X`.
 ```json
-"commandline": "cmd.exe /c "set DISPLAY=127.0.0.1:0.0&& ssh -X -i ~/.ssh/id_ed25519 user@server.adress"
+"commandline": "cmd.exe /c \"set DISPLAY=127.0.0.1:0.0&& ssh -X -i ~/.ssh/id_ed25519 user@server.adress\""
 ```
 
 ### ⌨️ Горячие клавиши

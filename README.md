@@ -119,7 +119,7 @@ Wenn du grafische Programme auf einem entfernten Server nutzen möchtest, empfie
    [Download auf www.straightrunning.com](http://www.straightrunning.com/XmingNotes)
 Nach der Installation wird das Display per X11-Forwarding mit dem Schalter `-X` an das Linux-System weitergeleitet.
 ```json
-"commandline": "cmd.exe /c "set DISPLAY=127.0.0.1:0.0&& ssh -X -i ~/.ssh/id_ed25519 benutzername@serveradresse"
+"commandline": "cmd.exe /c \"set DISPLAY=127.0.0.1:0.0&& ssh -X -i ~/.ssh/id_ed25519 benutzername@serveradresse\""
 ```
 
 ### ⌨️ Tastenkürzel
