@@ -113,6 +113,15 @@ Einen neuen Schlüssel erzeugst du mit folgendem Befehl:
 ssh-keygen -t ed25519 -C "dein-kommentar"
 ```
 
+👉 Nutzung grafischer Programme auf einem entfernten Linux-Server (X11-Forwarding)
+
+Wenn du grafische Programme auf einem entfernten Server nutzen möchtest, empfiehlt sich der Einsatz des XMing Servers.
+   [Download auf www.straightrunning.com](http://www.straightrunning.com/XmingNotes)
+Nach der Installation wird das Display per X11-Forwarding mit dem Schalter `-X` an das Linux-System weitergeleitet.
+```json
+"commandline": "cmd.exe /c "set DISPLAY=127.0.0.1:0.0&& ssh -X -i ~/.ssh/id_ed25519 benutzername@serveradresse"
+```
+
 ### ⌨️ Tastenkürzel
 
 | Tastenkombination     | Funktion                               |

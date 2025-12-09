@@ -107,6 +107,15 @@ To use a specific SSH key, just include it like this:
 ssh-keygen -t ed25519 -C "your-comment"
 ```
 
+👉 Using graphical applications on a remote Linux server (X11 forwarding)
+
+If you want to use graphical applications on a remote server, it is recommended to use the XMing Server.
+   [Download auf www.straightrunning.com](http://www.straightrunning.com/XmingNotes)
+After installation, the display is forwarded to the Linux system via X11 forwarding using the `-X` switch.
+```json
+"commandline": "cmd.exe /c "set DISPLAY=127.0.0.1:0.0&& ssh -X -i ~/.ssh/id_ed25519 user@server.adress"
+```
+
 ### ⌨️ Keybindings
 
 Key Combination | Function |

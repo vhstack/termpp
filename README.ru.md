@@ -84,7 +84,7 @@ Windows Terminal доступен бесплатно в Microsoft Store:
 
 ```json
 {
-    "commandline": "ssh username@server_address",
+    "commandline": "ssh username@server.address",
     "hidden": false,
     "name": "Мой SSH-сервер"
 }
@@ -93,13 +93,22 @@ Windows Terminal доступен бесплатно в Microsoft Store:
 Для использования специфического SSH-ключа:
 
 ```json
-"commandline": "ssh -i ~/.ssh/id_ed25519 username@server_address"
+"commandline": "ssh -i ~/.ssh/id_ed25519 username@server.address"
 ```
 
 👉 Создание SSH-ключа:
 
 ```sh
 ssh-keygen -t ed25519 -C "ваш комментарий"
+```
+
+👉 Использование графических приложений на удалённом Linux-сервере (X11-переадресация)
+
+Если вы хотите использовать графические приложения на удалённом сервере, рекомендуется использовать XMing Server.
+   [Download auf www.straightrunning.com](http://www.straightrunning.com/XmingNotes)
+После установки дисплей перенаправляется в систему Linux с помощью X11-переадресации с использованием ключа `-X`.
+```json
+"commandline": "cmd.exe /c "set DISPLAY=127.0.0.1:0.0&& ssh -X -i ~/.ssh/id_ed25519 user@server.adress"
 ```
 
 ### ⌨️ Горячие клавиши
