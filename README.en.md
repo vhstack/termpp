@@ -245,6 +245,7 @@ Your prompt will load automatically on login.
 - 💻 [Windows Terminal on GitHub](https://github.com/microsoft/terminal)
 - 🔤 [Microsoft Cascadia Font](https://github.com/microsoft/cascadia-code)
 - 🔤 [Nerd Fonts overview](https://www.nerdfonts.com/)
+- 💻 [XMing Server](http://www.straightrunning.com/XmingNotes)
 - 🖌️ [Oh My Posh documentation](https://ohmyposh.dev/docs)
 
 ---

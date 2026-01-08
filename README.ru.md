@@ -233,6 +233,7 @@ eval "$(~/.local/bin/oh-my-posh init bash --config ~/.config/ohmyposh/vhstack.om
 - 💻 [Windows Terminal GitHub](https://github.com/microsoft/terminal)
 - 🔤 [Microsoft Cascadia Font](https://github.com/microsoft/cascadia-code)
 - 🔤 [Nerd Fonts Overview](https://www.nerdfonts.com/font-downloads)
+- 💻 [XMing Server](http://www.straightrunning.com/XmingNotes)
 - 🖌️ [Oh My Posh Documentation](https://ohmyposh.dev/)
 
 ---
