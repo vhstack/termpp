@@ -144,6 +144,8 @@
             {
                 "face": "Cascadia Code NF"
             },
+			"antialiasingMode": "cleartype", 
+			"historySize": 50000,
             "opacity": 100
         },
         "list": 
