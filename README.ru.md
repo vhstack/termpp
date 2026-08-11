@@ -16,6 +16,40 @@
 
 ---
 
+## ⚡ Полная установка: vhstack Full Install
+
+Если вы хотите настроить всю рабочую среду vhstack — **Oh My Posh Prompt**,
+**Tmux** ([`vhstack/tmuxpp`](https://github.com/vhstack/tmuxpp)) и **Neovim**
+([`vhstack/nvimpp`](https://github.com/vhstack/nvimpp)) — за один шаг на
+сервере, используйте скрипт [`install-vhstack.sh`](./install-vhstack.sh):
+
+```bash
+curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-vhstack.sh | bash
+```
+
+🔧 Скрипт автоматически выполняет:
+
+- 💾 **Резервное копирование** существующих конфигураций в
+  `~/.vhstack-backup-<метка времени>` (`~/.tmux*`, `~/.config/nvim`, данные
+  плагинов Neovim, тема Prompt, а также копия `~/.bashrc`/`~/.zshrc`)
+- 💠 Установку **Oh My Posh** с темой `vhstack.omp.json` и строкой
+  инициализации в `~/.bashrc` или `~/.zshrc`
+- 🧩 **Конфигурацию Tmux**, включая TPM и плагины
+- ✍️ **Конфигурацию Neovim**, включая синхронизацию плагинов (headless)
+
+Требования: `git` и `curl`; также должны быть установлены `tmux` и `nvim`:
+
+```bash
+sudo apt install tmux neovim ripgrep clangd   # Debian/Ubuntu
+brew install tmux neovim ripgrep llvm         # macOS
+```
+
+> 💡 После установки запустите новую оболочку (или `source ~/.bashrc`) и
+> откройте `tmux` и `nvim` по одному разу. При необходимости выполните в
+> Neovim `:MasonInstall clangd cmake-language-server` для C/C++ LSP.
+
+---
+
 ## 📦 Выбор терминала: Windows Terminal
 
 Существует множество вариантов терминалов для Windows. После многочисленных тестов я выбрал [**Windows Terminal**](https://aka.ms/terminal-preview) – он:

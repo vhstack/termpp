@@ -17,6 +17,40 @@ It includes:
 
 ---
 
+## ⚡ Complete Setup: vhstack Full Install
+
+If you want to set up the entire vhstack environment — **Oh My Posh prompt**,
+**Tmux** ([`vhstack/tmuxpp`](https://github.com/vhstack/tmuxpp)) and **Neovim**
+([`vhstack/nvimpp`](https://github.com/vhstack/nvimpp)) — in a single step on
+your server, use the script [`install-vhstack.sh`](./install-vhstack.sh):
+
+```bash
+curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-vhstack.sh | bash
+```
+
+🔧 The script automatically takes care of:
+
+- 💾 **Backing up** existing configurations to `~/.vhstack-backup-<timestamp>`
+  (`~/.tmux*`, `~/.config/nvim`, Neovim plugin data, the prompt theme, and a
+  copy of your `~/.bashrc`/`~/.zshrc`)
+- 💠 Installing **Oh My Posh** with the `vhstack.omp.json` theme and the init
+  line in `~/.bashrc` or `~/.zshrc`
+- 🧩 The **Tmux configuration** including TPM and plugins
+- ✍️ The **Neovim configuration** including headless plugin synchronization
+
+Requirements: `git` and `curl`; `tmux` and `nvim` should be installed:
+
+```bash
+sudo apt install tmux neovim ripgrep clangd   # Debian/Ubuntu
+brew install tmux neovim ripgrep llvm         # macOS
+```
+
+> 💡 Afterwards start a new shell (or run `source ~/.bashrc`) and open `tmux`
+> and `nvim` once. In Neovim, run `:MasonInstall clangd cmake-language-server`
+> if you need the C/C++ LSP.
+
+---
+
 ## 📦 Terminal Choice: Windows Terminal
 
 There are many terminal options on Windows. After testing several options, 
