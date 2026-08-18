@@ -12,11 +12,14 @@
 - **Nerd Font** (например, Cascadia Code NF)
 - современный **Bash Prompt с Oh My Posh**
 
+Руководство состоит из двух частей: **часть 1** — настройка терминала локально 
+в Windows, **часть 2** — настройка Prompt на удалённом сервере.
+
 ![Скриншот](assets/screenshot.jpg)
 
 ---
 
-## ⚡ Полная установка: vhstack Full Install
+## ⚡ Быстрый старт: полная установка vhstack на сервере
 
 Если вы хотите настроить всю рабочую среду vhstack — **Oh My Posh Prompt**,
 **Tmux** ([`vhstack/tmuxpp`](https://github.com/vhstack/tmuxpp)) и **Neovim**
@@ -27,15 +30,15 @@
 curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-vhstack.sh | bash
 ```
 
-🔧 Скрипт автоматически выполняет:
+Скрипт автоматически выполняет:
 
-- 💾 **Резервное копирование** существующих конфигураций в
+- **Резервное копирование** существующих конфигураций в
   `~/.vhstack-backup-<метка времени>` (`~/.tmux*`, `~/.config/nvim`, данные
   плагинов Neovim, тема Prompt, а также копия `~/.bashrc`/`~/.zshrc`)
-- 💠 Установку **Oh My Posh** с темой `vhstack.omp.json` и строкой
+- Установку **Oh My Posh** с темой `vhstack.omp.json` и строкой
   инициализации в `~/.bashrc` или `~/.zshrc`
-- 🧩 **Конфигурацию Tmux**, включая TPM и плагины
-- ✍️ **Конфигурацию Neovim**, включая синхронизацию плагинов (headless)
+- **Конфигурацию Tmux**, включая TPM и плагины
+- **Конфигурацию Neovim**, включая синхронизацию плагинов (headless)
 
 Требования: `git` и `curl`; также должны быть установлены `tmux` и `nvim`:
 
@@ -44,13 +47,15 @@ sudo apt install tmux neovim ripgrep clangd   # Debian/Ubuntu
 brew install tmux neovim ripgrep llvm         # macOS
 ```
 
-> 💡 После установки запустите новую оболочку (или `source ~/.bashrc`) и
+> **Совет:** После установки запустите новую оболочку (или `source ~/.bashrc`) и
 > откройте `tmux` и `nvim` по одному разу. При необходимости выполните в
 > Neovim `:MasonInstall clangd cmake-language-server` для C/C++ LSP.
 
 ---
 
-## 📦 Выбор терминала: Windows Terminal
+## 🪟 Часть 1: Windows Terminal (локально)
+
+### Выбор терминала
 
 Существует множество вариантов терминалов для Windows. После многочисленных тестов я выбрал [**Windows Terminal**](https://aka.ms/terminal-preview) – он:
 
@@ -59,25 +64,15 @@ brew install tmux neovim ripgrep llvm         # macOS
 - гибко настраиваемый  
 - легковесный  
 
-Я использую **Preview-версию**, чтобы опробовать новые функции раньше всех.
-
-### 🔧 Установка
-
+Я использую **Preview-версию**, чтобы опробовать новые функции раньше всех. 
 Windows Terminal доступен бесплатно в Microsoft Store:
 
-- ▶️ [Windows Terminal Preview](https://apps.microsoft.com/detail/9n8g5rfz9xk3)
+- [Windows Terminal Preview](https://apps.microsoft.com/detail/9n8g5rfz9xk3)
 
----
+### Шрифт: Nerd Font с поддержкой иконок
 
-## 🔤 Шрифт: Nerd Font с поддержкой иконок
-
-Для корректного отображения иконок, символов Git и элементов prompt необходима **Nerd Font**. Рекомендую:
-
-### 💎 Cascadia Code NF
-
-➡️ [Загрузить с GitHub](https://github.com/microsoft/cascadia-code)
-
-Преимущества:
+Для корректного отображения иконок, символов Git и элементов prompt необходима **Nerd Font**. 
+Рекомендую [**Cascadia Code NF**](https://github.com/microsoft/cascadia-code):
 
 - Чёткая читаемость  
 - Элегантный дизайн  
@@ -86,7 +81,7 @@ Windows Terminal доступен бесплатно в Microsoft Store:
 
 > После установки шрифт можно выбрать в Windows Terminal через `settings.json` как основной.
 
-#### ✨ Примеры лигатур
+Примеры лигатур:
 
 | Ввод    | Отображение (лигатура) |
 |---------|------------------------|
@@ -97,22 +92,19 @@ Windows Terminal доступен бесплатно в Microsoft Store:
 | `===`   | ≡                      |
 | `<=`    | ≤                      |
 
-Альтернативно можно установить любой другой Nerd Font по вкусу:
+Альтернативно можно установить любой другой Nerd Font по вкусу: 
+[nerdfonts.com](https://www.nerdfonts.com/font-downloads)
 
-➡️ [Загрузить на nerdfonts.com](https://www.nerdfonts.com/font-downloads)
+### Настройка Windows Terminal
 
----
-
-## ⚙️ Настройка Windows Terminal
-
-Конфигурация выполняется в файле `settings.json`.
-
-### 📝 Алгоритм действий
+Конфигурация выполняется в файле `settings.json`:
 
 1. Откройте Windows Terminal  
 2. Нажмите `Ctrl + ,` (или выберите «Настройки» в меню)  
 3. Откройте `settings.json`  
 4. Добавьте или измените нужные параметры
+
+Подходящий шаблон находится в этом репозитории: [`settings.json`](./settings.json)
 
 В `profiles.list[]` можно создавать профили SSH для подключения к удалённым серверам:
 
@@ -120,6 +112,7 @@ Windows Terminal доступен бесплатно в Microsoft Store:
 {
     "commandline": "ssh username@server.address",
     "hidden": false,
+    "icon": "\ud83d\udda5",
     "name": "Мой SSH-сервер"
 }
 ```
@@ -130,30 +123,29 @@ Windows Terminal доступен бесплатно в Microsoft Store:
 "commandline": "ssh -i ~/.ssh/id_ed25519 username@server.address"
 ```
 
-👉 Создание SSH-ключа:
+Создание нового SSH-ключа:
 
 ```sh
 ssh-keygen -t ed25519 -C "ваш комментарий"
 ```
 
-👉 Использование графических приложений на удалённом Linux-сервере (X11-переадресация)
+**Графические приложения на удалённом Linux-сервере (X11-переадресация):**
+Если вы хотите использовать графические приложения на удалённом сервере, 
+рекомендуется использовать [XMing Server](http://www.straightrunning.com/XmingNotes).
+После установки дисплей перенаправляется в систему Linux с помощью 
+X11-переадресации с использованием ключа `-X`.
 
-Если вы хотите использовать графические приложения на удалённом сервере, рекомендуется использовать XMing Server.
-
-➡️ [Загрузка на www.straightrunning.com](http://www.straightrunning.com/XmingNotes)
-
-После установки дисплей перенаправляется в систему Linux с помощью X11-переадресации с использованием ключа `-X`.
 ```json
-"commandline": "cmd.exe /c \"set DISPLAY=127.0.0.1:0.0&& ssh -X -i ~/.ssh/id_ed25519 user@server.adress\""
+"commandline": "cmd.exe /c \"set DISPLAY=127.0.0.1:0.0&& ssh -X -i ~/.ssh/id_ed25519 username@server.address\""
 ```
 
-### ⌨️ Горячие клавиши
+### Горячие клавиши
 
 | Сочетание            | Действие                                  |
 |----------------------|-------------------------------------------|
 | `Shift + ← / →`      | Переключение вкладок в Windows Terminal   |
-| `Alt + ← / →`        | Переключение окон Tmux                   |
-| `Ctrl + ← / →`       | Переключение буферов NVim                |
+| `Alt + ← / →`        | Переключение окон Tmux                    |
+| `Ctrl + ← / →`       | Переключение буферов Neovim               |
 
 Эти настройки и цветовая схема согласованы с моими конфигурациями Neovim и Tmux:
 
@@ -162,9 +154,9 @@ ssh-keygen -t ed25519 -C "ваш комментарий"
 
 ---
 
-## 🎨 Поддержка True Color
+## 🐧 Часть 2: Prompt на удалённом сервере
 
-### ✅ Установка переменной TERM
+### Поддержка True Color
 
 Убедитесь, что переменная `TERM` установлена в `xterm-256color`.  
 Добавьте в `.bashrc`, `.zshrc` или `.profile`:
@@ -173,17 +165,13 @@ ssh-keygen -t ed25519 -C "ваш комментарий"
 export TERM=xterm-256color
 ```
 
-### 🧪 Проверка отображения цветов
-
 Скрипт [`truecolor-test.sh`](./truecolor-test.sh) поможет проверить поддержку 24-битного цвета. Запустите:
 
 ```bash
 curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/truecolor-test.sh | bash
 ```
 
-Если терминал поддерживает только 256 цветов, градиент будет ступенчатым; при True Color — плавным.
-
-### 🖼️ Примеры
+Скрипт выводит плавный градиент. Если терминал поддерживает только 256 цветов, градиент будет ступенчатым; при True Color — плавным.
 
 **256 цветов (xterm-256color с fallback 8-bit):**  
 ![256 цветов](assets/screenshot-256color.png)
@@ -191,9 +179,7 @@ curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/truecolor-test.sh
 **True Color (24-bit):**  
 ![True Color](assets/screenshot-truecolor.png)
 
----
-
-## 💠 Bash Prompt с Oh My Posh на удалённом сервере
+### Bash Prompt с Oh My Posh
 
 Информативный и современный Bash Prompt — бесценен. С **Oh My Posh** вы получаете:
 
@@ -203,13 +189,11 @@ curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/truecolor-test.sh
 
 > Важно: настройка производится **только** на удалённом сервере в Bash, **не локально**.
 
-### ⚡ Быстрая установка
+#### Быстрая установка
 
-Автоматический скрипт установки vhstack-Prompt:
-
-📥 [Скачать скрипт установки](https://raw.githubusercontent.com/vhstack/termpp/main/install-termpp.sh)
-
-Или выполнить напрямую:
+Тему vhstack-Prompt можно установить автоматически скриптом
+[`install-termpp.sh`](./install-termpp.sh) — выполните его прямо в терминале
+(Bash или Zsh):
 
 ```bash
 curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-termpp.sh | bash
@@ -221,42 +205,42 @@ curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-termpp.sh
 
 Скрипт автоматически:
 
-- 📦 Устанавливает **Oh My Posh**  
-- 📁 Копирует тему `vhstack.omp.json` в `~/.config/ohmyposh/`  
-- ✍️ Добавляет в `~/.bashrc` или `~/.zshrc` строку инициализации
+- Устанавливает **Oh My Posh** (если ещё не установлен)  
+- Копирует тему `vhstack.omp.json` в `~/.config/ohmyposh/`  
+- Добавляет в `~/.bashrc` или `~/.zshrc` строку инициализации
 
-> 💡 После установки выполните `source ~/.bashrc` или перезапустите терминал.
+> **Совет:** После установки выполните `source ~/.bashrc` или `source ~/.zshrc` — или перезапустите терминал.
 
-### 🛠️ Ручная установка
+#### Ручная установка
 
-```bash
-curl -s https://ohmyposh.dev/install.sh | bash -s
-```
+Вместо скрипта шаги можно выполнить по отдельности:
 
-Подробности:  
-👉 [Oh My Posh – Linux Installation](https://ohmyposh.dev/docs/installation/linux)
+1. Установите Oh My Posh (подробности в
+   [руководстве по установке для Linux](https://ohmyposh.dev/docs/installation/linux)):
 
----
+   ```bash
+   curl -s https://ohmyposh.dev/install.sh | bash -s
+   ```
 
-## 🎨 Конфигурация темы Oh My Posh
+2. Скопируйте тему `vhstack.omp.json` — или любую другую на ваш вкус — в
+   каталог `~/.config/ohmyposh`:
 
-Используйте тему `vhstack.omp.json` или любую другую на ваш вкус.
+   ```bash
+   mkdir -p ~/.config/ohmyposh
+   curl -L https://raw.githubusercontent.com/vhstack/termpp/main/vhstack.omp.json -o ~/.config/ohmyposh/vhstack.omp.json
+   ```
 
-### ✅ Шаги:
+3. Добавьте в `~/.bashrc` или `~/.zshrc`:
 
-1. Создайте директорию и загрузите тему:
-```bash
-mkdir -p ~/.config/ohmyposh
-curl -L https://raw.githubusercontent.com/vhstack/termpp/main/vhstack.omp.json -o ~/.config/ohmyposh/vhstack.omp.json
-```
-2. Добавьте в `~/.bashrc` или `~/.zshrc`:
-```bash
-eval "$(~/.local/bin/oh-my-posh init bash --config ~/.config/ohmyposh/vhstack.omp.json)"
-```
-3. Загрузите обновления:
-```bash
-. ~/.bashrc
-```
+   ```bash
+   eval "$(~/.local/bin/oh-my-posh init bash --config ~/.config/ohmyposh/vhstack.omp.json)"
+   ```
+
+4. Перезагрузите конфигурацию оболочки:
+
+   ```bash
+   . ~/.bashrc
+   ```
 
 Теперь ваш prompt будет автоматически загружаться при входе в систему.
 
@@ -264,11 +248,11 @@ eval "$(~/.local/bin/oh-my-posh init bash --config ~/.config/ohmyposh/vhstack.om
 
 ## 📎 Полезные ссылки
 
-- 💻 [Windows Terminal GitHub](https://github.com/microsoft/terminal)
-- 🔤 [Microsoft Cascadia Font](https://github.com/microsoft/cascadia-code)
-- 🔤 [Nerd Fonts Overview](https://www.nerdfonts.com/font-downloads)
-- 💻 [XMing Server](http://www.straightrunning.com/XmingNotes)
-- 🖌️ [Oh My Posh Documentation](https://ohmyposh.dev/)
+- [Windows Terminal GitHub](https://github.com/microsoft/terminal)
+- [Microsoft Cascadia Font](https://github.com/microsoft/cascadia-code)
+- [Nerd Fonts Overview](https://www.nerdfonts.com/font-downloads)
+- [XMing Server](http://www.straightrunning.com/XmingNotes)
+- [Oh My Posh Documentation](https://ohmyposh.dev/)
 
 ---
 
