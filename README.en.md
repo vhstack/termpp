@@ -132,14 +132,34 @@ Generate a new SSH key with the following command:
 ssh-keygen -t ed25519 -C "your-comment"
 ```
 
-**Using graphical applications on a remote Linux server (X11 forwarding):**
-If you want to use graphical applications on a remote server, it is recommended 
-to use the [XMing Server](http://www.straightrunning.com/XmingNotes).
-After installation, the display is forwarded to the Linux system via X11 
-forwarding using the `-X` switch.
+**Graphical applications from the remote server (X11 via WSLg):**
+WSL2 ships its own X server with WSLg — an additional X server on Windows 
+is no longer needed. Build the SSH connection from within WSL; the server's 
+X applications appear as regular Windows windows:
 
 ```json
-"commandline": "cmd.exe /c \"set DISPLAY=127.0.0.1:0.0&& ssh -X -i ~/.ssh/id_ed25519 user@server.address\""
+"commandline": "wsl.exe -- ssh -X -i ~/.ssh/id_ed25519 user@server.address"
+```
+
+Requirements: up-to-date WSL (`wsl --update`); on the server, `xauth` 
+installed and `X11Forwarding yes` (the default on Debian/Ubuntu).
+
+**Older X applications** (e.g., legacy Qt/Motif) whose dialogs and popups 
+are misplaced under WSLg need a classic X screen with a window manager. 
+The [`xssh`](./xssh) script takes care of that (Xephyr + openbox). 
+Install once in WSL:
+
+```bash
+sudo apt install xserver-xephyr openbox x11-utils
+curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/xssh -o ~/.local/bin/xssh && chmod +x ~/.local/bin/xssh
+```
+
+When needed, call it from a WSL shell — same parameters as `ssh`. The 
+Xephyr window opens on the first call, hosts all X windows of the session, 
+and closes automatically when the last session ends:
+
+```bash
+xssh user@server.address
 ```
 
 ### Keybindings
@@ -253,7 +273,7 @@ Your prompt will load automatically on login.
 - [Windows Terminal on GitHub](https://github.com/microsoft/terminal)
 - [Microsoft Cascadia Font](https://github.com/microsoft/cascadia-code)
 - [Nerd Fonts overview](https://www.nerdfonts.com/)
-- [XMing Server](http://www.straightrunning.com/XmingNotes)
+- [WSLg (GUI apps on WSL)](https://github.com/microsoft/wslg)
 - [Oh My Posh documentation](https://ohmyposh.dev/docs)
 
 ---

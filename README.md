@@ -138,14 +138,35 @@ Einen neuen SSH-Schlüssel erzeugst du mit folgendem Befehl:
 ssh-keygen -t ed25519 -C "dein-kommentar"
 ```
 
-**Grafische Programme auf einem entfernten Linux-Server (X11-Forwarding):**
-Wenn du grafische Programme auf einem entfernten Server nutzen möchtest, empfiehlt sich 
-der Einsatz des [XMing Servers](http://www.straightrunning.com/XmingNotes).
-Nach der Installation wird das Display per X11-Forwarding mit dem Schalter `-X` an das 
-Linux-System weitergeleitet.
+**Grafische Programme vom Remote-Server (X11 über WSLg):**
+WSL2 bringt mit WSLg einen eigenen X-Server mit — ein zusätzlicher X-Server 
+unter Windows ist nicht mehr nötig. Die SSH-Verbindung wird dazu aus WSL 
+heraus aufgebaut; X-Programme des Servers erscheinen als normale 
+Windows-Fenster:
 
 ```json
-"commandline": "cmd.exe /c \"set DISPLAY=127.0.0.1:0.0&& ssh -X -i ~/.ssh/id_ed25519 benutzername@serveradresse\""
+"commandline": "wsl.exe -- ssh -X -i ~/.ssh/id_ed25519 benutzername@serveradresse"
+```
+
+Voraussetzungen: aktuelles WSL (`wsl --update`); auf dem Server `xauth` 
+installiert und `X11Forwarding yes` (bei Debian/Ubuntu der Default).
+
+**Ältere X-Anwendungen** (z. B. altes Qt/Motif), deren Dialoge und Popups 
+unter WSLg falsch positioniert werden, brauchen einen klassischen X-Screen 
+mit Window-Manager. Das übernimmt das Skript [`xssh`](./xssh) 
+(Xephyr + openbox). Einmalig in WSL installieren:
+
+```bash
+sudo apt install xserver-xephyr openbox x11-utils
+curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/xssh -o ~/.local/bin/xssh && chmod +x ~/.local/bin/xssh
+```
+
+Bei Bedarf in einer WSL-Shell aufrufen — Parameter wie bei `ssh`. Das 
+Xephyr-Fenster öffnet sich beim ersten Aufruf, nimmt alle X-Fenster der 
+Sitzung auf und schließt sich automatisch, wenn die letzte Sitzung endet:
+
+```bash
+xssh benutzername@serveradresse
 ```
 
 ### Tastenkürzel
@@ -263,7 +284,7 @@ Dein Shell-Prompt wird nun automatisch bei jeder Anmeldung (login) geladen.
 - [Windows Terminal GitHub](https://github.com/microsoft/terminal)
 - [Microsoft Cascadia Font](https://github.com/microsoft/cascadia-code)
 - [Nerd Fonts Übersicht](https://www.nerdfonts.com/font-downloads)
-- [XMing Server](http://www.straightrunning.com/XmingNotes)
+- [WSLg (GUI-Apps unter WSL)](https://github.com/microsoft/wslg)
 - [Oh My Posh Dokumentation](https://ohmyposh.dev/)
 
 ---

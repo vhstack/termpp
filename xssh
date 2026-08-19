@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+# xssh — SSH mit X11-Forwarding in einen Xephyr-Screen.
+#
+# Für ältere X-Anwendungen (z. B. altes Qt/Motif), deren Dialoge und Popups
+# unter WSLg falsch positioniert werden: WSLg hat keinen klassischen
+# X-Root-Screen, jedes Fenster wird einzeln abgebildet. Xephyr stellt einen
+# vollwertigen X-Screen in einem Fenster bereit, openbox verwaltet darin
+# die Fenster — die Anwendung verhält sich wie unter einem normalen X-Server.
+# Endet die letzte xssh-Sitzung, wird der Xephyr automatisch beendet.
+#
+# Verwendung:  xssh [ssh-Optionen] benutzer@host     (Parameter wie bei ssh)
+# Anpassbar:   XSSH_DISPLAY  Display des Xephyr        (Default :2)
+#              XSSH_SIZE     Fenstergröße              (Default 1920x1080)
+#              XSSH_KEYMAP   Tastaturlayout im Xephyr  (Default de)
+#              XSSH_KEEP=1   Xephyr nach Sitzungsende weiterlaufen lassen
+#
+# Technischer Hintergrund (WSLg): /tmp/.X11-unix ist read-only gemountet —
+# Xephyr kann dort keine Socket-Datei anlegen und ist lokal nur über den
+# abstrakten Unix-Socket erreichbar. OpenSSH verbindet aber ausschließlich
+# über die Socket-Datei. Deshalb lauscht Xephyr zusätzlich per TCP
+# (-listen tcp -ac), und ssh verbindet über DISPLAY=127.0.0.1:<n>.
+# -ac schaltet die X-Zugriffskontrolle ab (es gibt kein xauth-Cookie);
+# der TCP-Port ist nur innerhalb der WSL-VM/NAT erreichbar.
+
+set -u
+
+XDISP="${XSSH_DISPLAY:-:2}"
+DNUM="${XDISP#:}"
+SIZE="${XSSH_SIZE:-1920x1080}"
+KEYMAP="${XSSH_KEYMAP:-de}"
+SESSDIR="/tmp/xssh-${USER}-${DNUM}.sessions"
+
+for tool in Xephyr xdpyinfo; do
+    command -v "$tool" >/dev/null 2>&1 || {
+        echo "$tool fehlt — installieren mit: sudo apt install xserver-xephyr openbox x11-utils" >&2
+        exit 1
+    }
+done
+
+xready() { DISPLAY="$XDISP" xdpyinfo >/dev/null 2>&1; }
+
+# Sitzung registrieren; verwaiste Einträge abgestürzter Sitzungen entfernen
+mkdir -p "$SESSDIR"
+for f in "$SESSDIR"/*; do
+    [ -e "$f" ] || continue
+    [ -d "/proc/$(basename "$f")" ] || rm -f "$f"
+done
+touch "$SESSDIR/$$"
+
+# Aufräumen beim Beenden: eigene Sitzung austragen; war es die letzte,
+# den Xephyr beenden (openbox endet mit dem X-Server von selbst)
+cleanup() {
+    rm -f "$SESSDIR/$$"
+    [ "${XSSH_KEEP:-0}" = "1" ] && return
+    if [ -z "$(ls -A "$SESSDIR" 2>/dev/null)" ]; then
+        pkill -f "Xephyr $XDISP -screen" 2>/dev/null
+        rmdir "$SESSDIR" 2>/dev/null
+    fi
+}
+trap cleanup EXIT
+
+# Xephyr für dieses Display starten, falls noch keiner läuft
+if ! xready; then
+    Xephyr "$XDISP" -screen "$SIZE" -resizeable -listen tcp -ac \
+        -title "Remote-X ($XDISP)" >/dev/null 2>&1 &
+    for _ in $(seq 1 50); do xready && break; sleep 0.1; done
+    xready || { echo "Xephyr-Start fehlgeschlagen (Diagnose: Xephyr $XDISP ohne Redirects starten)" >&2; exit 1; }
+    DISPLAY="$XDISP" setxkbmap "$KEYMAP" 2>/dev/null || true
+fi
+
+# Window-Manager im Xephyr starten (beendet sich still, wenn schon einer läuft)
+if command -v openbox >/dev/null 2>&1; then
+    DISPLAY="$XDISP" openbox >/dev/null 2>&1 &
+fi
+
+# SSH mit X11-Forwarding — über TCP zum Xephyr (siehe Kopfkommentar);
+# kein exec, damit das Aufräumen nach Sitzungsende läuft
+DISPLAY="127.0.0.1:${DNUM}" ssh -X "$@"

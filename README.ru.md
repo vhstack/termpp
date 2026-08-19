@@ -129,14 +129,34 @@ Windows Terminal доступен бесплатно в Microsoft Store:
 ssh-keygen -t ed25519 -C "ваш комментарий"
 ```
 
-**Графические приложения на удалённом Linux-сервере (X11-переадресация):**
-Если вы хотите использовать графические приложения на удалённом сервере, 
-рекомендуется использовать [XMing Server](http://www.straightrunning.com/XmingNotes).
-После установки дисплей перенаправляется в систему Linux с помощью 
-X11-переадресации с использованием ключа `-X`.
+**Графические приложения с удалённого сервера (X11 через WSLg):**
+WSL2 включает собственный X-сервер (WSLg) — дополнительный X-сервер под 
+Windows больше не нужен. SSH-соединение устанавливается из WSL; X-программы 
+сервера отображаются как обычные окна Windows:
 
 ```json
-"commandline": "cmd.exe /c \"set DISPLAY=127.0.0.1:0.0&& ssh -X -i ~/.ssh/id_ed25519 username@server.address\""
+"commandline": "wsl.exe -- ssh -X -i ~/.ssh/id_ed25519 username@server.address"
+```
+
+Требования: актуальный WSL (`wsl --update`); на сервере установлен `xauth` 
+и включено `X11Forwarding yes` (в Debian/Ubuntu — по умолчанию).
+
+**Старые X-приложения** (например, старые Qt/Motif), у которых диалоги и 
+всплывающие окна позиционируются неправильно под WSLg, требуют классического 
+X-экрана с оконным менеджером. Это берёт на себя скрипт [`xssh`](./xssh) 
+(Xephyr + openbox). Установка (однократно, в WSL):
+
+```bash
+sudo apt install xserver-xephyr openbox x11-utils
+curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/xssh -o ~/.local/bin/xssh && chmod +x ~/.local/bin/xssh
+```
+
+При необходимости вызывайте из оболочки WSL — параметры как у `ssh`. Окно 
+Xephyr открывается при первом вызове, принимает все X-окна сессии и 
+автоматически закрывается после завершения последней сессии:
+
+```bash
+xssh username@server.address
 ```
 
 ### Горячие клавиши
@@ -251,7 +271,7 @@ curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-termpp.sh
 - [Windows Terminal GitHub](https://github.com/microsoft/terminal)
 - [Microsoft Cascadia Font](https://github.com/microsoft/cascadia-code)
 - [Nerd Fonts Overview](https://www.nerdfonts.com/font-downloads)
-- [XMing Server](http://www.straightrunning.com/XmingNotes)
+- [WSLg (GUI-приложения в WSL)](https://github.com/microsoft/wslg)
 - [Oh My Posh Documentation](https://ohmyposh.dev/)
 
 ---
