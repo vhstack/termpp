@@ -39,6 +39,7 @@ curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-vhstack.s
   инициализации в `~/.bashrc` или `~/.zshrc`
 - **Конфигурацию Tmux**, включая TPM и плагины
 - **Конфигурацию Neovim**, включая синхронизацию плагинов (headless)
+- **Скрипт xssh** в `~/.local/bin` (X11 через Xephyr, см. ниже)
 
 Требования: `git` и `curl`; также должны быть установлены `tmux` и `nvim`:
 

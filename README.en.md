@@ -40,6 +40,7 @@ The script automatically takes care of:
   line in `~/.bashrc` or `~/.zshrc`
 - The **Tmux configuration** including TPM and plugins
 - The **Neovim configuration** including headless plugin synchronization
+- The **xssh script** to `~/.local/bin` (X11 via Xephyr, see below)
 
 Requirements: `git` and `curl`; `tmux` and `nvim` should be installed:
 

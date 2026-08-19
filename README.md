@@ -42,6 +42,7 @@ Das Skript übernimmt automatisch:
   Init-Zeile in `~/.bashrc` bzw. `~/.zshrc`
 - **Tmux-Konfiguration** inklusive TPM und Plugins
 - **Neovim-Konfiguration** inklusive Plugin-Synchronisation (headless)
+- **xssh-Skript** nach `~/.local/bin` (X11 über Xephyr, siehe unten)
 
 Voraussetzungen: `git` und `curl`; `tmux` und `nvim` sollten installiert sein:
 

@@ -6,6 +6,7 @@
 #   1. Oh My Posh prompt with the vhstack theme   (vhstack/termpp)
 #   2. Tmux configuration incl. TPM and plugins   (vhstack/tmuxpp)
 #   3. Neovim C/C++ configuration                 (vhstack/nvimpp)
+#   4. xssh helper script (SSH into a Xephyr X-screen, see README)
 #
 # Existing configurations are moved to a timestamped backup directory
 # (~/.vhstack-backup-<timestamp>) before anything is overwritten.
@@ -170,6 +171,27 @@ if command -v nvim &> /dev/null; then
 else
   warn "nvim not found — plugins will be installed on the first nvim start."
 fi
+
+# --- 4. xssh: SSH with X11 forwarding into a Xephyr screen --------------------
+
+step "Installing xssh script (X11 via Xephyr, vhstack/termpp)"
+
+mkdir -p "$HOME/.local/bin"
+backup "$HOME/.local/bin/xssh"
+curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/xssh \
+  -o "$HOME/.local/bin/xssh"
+chmod +x "$HOME/.local/bin/xssh"
+ok "xssh installed: ~/.local/bin/xssh"
+
+if ! command -v Xephyr &> /dev/null || ! command -v xdpyinfo &> /dev/null; then
+  warn "Xephyr/x11-utils not found — xssh needs them at runtime:"
+  warn "  sudo apt install xserver-xephyr openbox x11-utils"
+fi
+
+case ":$PATH:" in
+  *":$HOME/.local/bin:"*) ;;
+  *) warn "~/.local/bin is not in your PATH — add it to $RC_FILE to call xssh directly." ;;
+esac
 
 # --- Summary ------------------------------------------------------------------
 
