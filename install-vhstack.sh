@@ -7,6 +7,8 @@
 #   2. Tmux configuration incl. TPM and plugins   (vhstack/tmuxpp)
 #   3. Neovim C/C++ configuration                 (vhstack/nvimpp)
 #   4. xssh helper script (SSH into a Xephyr X-screen, see README)
+#   5. update-vhstack command to ~/.local/bin — run it any time to pull
+#      the latest configurations without a full reinstall
 #
 # Existing configurations are moved to a timestamped backup directory
 # (~/.vhstack-backup-<timestamp>) before anything is overwritten.
@@ -193,6 +195,21 @@ case ":$PATH:" in
   *) warn "~/.local/bin is not in your PATH — add it to $RC_FILE to call xssh directly." ;;
 esac
 
+# --- 5. update-vhstack: update command for later ------------------------------
+
+step "Installing update-vhstack command (vhstack/termpp)"
+
+backup "$HOME/.local/bin/update-vhstack"
+if curl -fsSL https://raw.githubusercontent.com/vhstack/termpp/main/update-vhstack.sh \
+     -o "$HOME/.local/bin/update-vhstack"; then
+  chmod +x "$HOME/.local/bin/update-vhstack"
+  ok "update-vhstack installed: ~/.local/bin/update-vhstack"
+else
+  rm -f "$HOME/.local/bin/update-vhstack"
+  warn "Download of update-vhstack.sh failed — update later via:"
+  warn "  curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/update-vhstack.sh | bash"
+fi
+
 # --- Summary ------------------------------------------------------------------
 
 echo
@@ -206,5 +223,8 @@ echo "Next steps:"
 echo "  1. Start a new $SHELL_NAME session (or run: source $RC_FILE)"
 echo "  2. Run 'tmux'  — plugins: Prefix + I (Prefix = Ctrl+A) if needed"
 echo "  3. Run 'nvim'  — then ':MasonInstall clangd cmake-language-server' for C/C++ LSP"
+echo
+echo "Later on, bring everything up to date with a single command:"
+echo "  update-vhstack"
 echo
 echo "🚀 Happy hacking!"

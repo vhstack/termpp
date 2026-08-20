@@ -40,6 +40,18 @@ curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-vhstack.s
 - **Конфигурацию Tmux**, включая TPM и плагины
 - **Конфигурацию Neovim**, включая синхронизацию плагинов (headless)
 - **Скрипт xssh** в `~/.local/bin` (X11 через Xephyr, см. ниже)
+- **Команду update-vhstack** в `~/.local/bin` для последующих обновлений
+
+**Обновление позже:** Существующую установку обновляет команда
+`update-vhstack` (или [`update-vhstack.sh`](./update-vhstack.sh)) — тема,
+конфигурации Tmux и Neovim вместе с плагинами, не затрагивая
+`~/.bashrc`/`~/.zshrc`. Заменяемые конфигурации предварительно
+сохраняются в `~/.vhstack-backup-update-<метка времени>`:
+
+```bash
+update-vhstack   # или:
+curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/update-vhstack.sh | bash
+```
 
 Требования: `git` и `curl`; также должны быть установлены `tmux` и `nvim`:
 

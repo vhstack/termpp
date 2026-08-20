@@ -43,6 +43,18 @@ Das Skript übernimmt automatisch:
 - **Tmux-Konfiguration** inklusive TPM und Plugins
 - **Neovim-Konfiguration** inklusive Plugin-Synchronisation (headless)
 - **xssh-Skript** nach `~/.local/bin` (X11 über Xephyr, siehe unten)
+- **update-vhstack-Befehl** nach `~/.local/bin` für spätere Updates
+
+**Später aktualisieren:** Eine bestehende Installation bringt der Befehl
+`update-vhstack` (bzw. [`update-vhstack.sh`](./update-vhstack.sh)) auf den
+aktuellen Stand — Theme, Tmux- und Neovim-Konfiguration samt Plugins, ohne
+die `~/.bashrc`/`~/.zshrc` anzufassen. Ersetzte Konfigurationen landen
+vorher in `~/.vhstack-backup-update-<Zeitstempel>`:
+
+```bash
+update-vhstack   # oder:
+curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/update-vhstack.sh | bash
+```
 
 Voraussetzungen: `git` und `curl`; `tmux` und `nvim` sollten installiert sein:
 
