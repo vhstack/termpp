@@ -4,7 +4,7 @@
 #
 # Brings an installation made by install-vhstack.sh up to date:
 #   1. Oh My Posh vhstack theme                    (vhstack/termpp)
-#   2. Tmux configuration + plugin updates         (vhstack/tmuxpp)
+#   2. Tmux configuration                          (vhstack/tmuxpp)
 #   3. Neovim configuration + plugin sync          (vhstack/nvimpp)
 #   4. xssh helper script                          (vhstack/termpp)
 #
@@ -102,7 +102,8 @@ if [ -e "$HOME/.tmux/tmux.conf" ]; then
   git clone --depth 1 --quiet https://github.com/vhstack/tmuxpp.git "$TMP_DIR/tmuxpp"
   rm -rf "$TMP_DIR/tmuxpp/.git" "$TMP_DIR/tmuxpp/assets" "$TMP_DIR/tmuxpp"/README*.md
 
-  # Back up and replace the configuration files, keep ~/.tmux/plugins.
+  # Back up and replace the configuration files. ~/.tmux/plugins is kept —
+  # the optional catppuccin theme lives there (manually cloned).
   for entry in "$HOME/.tmux"/* "$HOME/.tmux"/.[!.]*; do
     [ -e "$entry" ] || [ -L "$entry" ] || continue
     [ "$(basename "$entry")" = "plugins" ] && continue
@@ -119,24 +120,9 @@ if [ -e "$HOME/.tmux/tmux.conf" ]; then
   fi
   ok "Tmux configuration updated: ~/.tmux (~/.tmux.conf)"
 
-  if [ ! -x "$HOME/.tmux/plugins/tpm/bin/update_plugins" ]; then
-    info "TPM missing — reinstalling ..."
-    rm -rf "$HOME/.tmux/plugins/tpm"
-    git clone --depth 1 --quiet https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
-    rm -rf "$HOME/.tmux/plugins/tpm/.git"
-  fi
-
-  if command -v tmux &> /dev/null; then
-    info "Updating tmux plugins ..."
-    "$HOME/.tmux/plugins/tpm/bin/install_plugins" > /dev/null 2>&1 || true
-    "$HOME/.tmux/plugins/tpm/bin/update_plugins" all > /dev/null 2>&1 || true
-    ok "Tmux plugins updated."
-    if [ -n "${TMUX:-}" ]; then
-      tmux source-file "$HOME/.tmux.conf" > /dev/null 2>&1 || true
-      info "Running tmux session reloaded."
-    fi
-  else
-    warn "tmux not found — plugins update on the next start (Prefix + U)."
+  if command -v tmux &> /dev/null && [ -n "${TMUX:-}" ]; then
+    tmux source-file "$HOME/.tmux.conf" > /dev/null 2>&1 || true
+    info "Running tmux session reloaded."
   fi
 else
   warn "Tmux configuration not installed — skipping."

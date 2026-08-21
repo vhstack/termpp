@@ -4,7 +4,7 @@
 #
 # Installs in one go:
 #   1. Oh My Posh prompt with the vhstack theme   (vhstack/termpp)
-#   2. Tmux configuration incl. TPM and plugins   (vhstack/tmuxpp)
+#   2. Tmux configuration                         (vhstack/tmuxpp)
 #      on WSL additionally win32yank.exe for a fast clipboard
 #   3. Neovim C/C++ configuration                 (vhstack/nvimpp)
 #   4. xssh helper script (SSH into a Xephyr X-screen, see README)
@@ -24,7 +24,7 @@
 #   brew install tmux neovim ripgrep llvm         # macOS
 #
 # After the installation start a new shell session (or `source ~/.bashrc`),
-# then run `tmux` and `nvim` once so the plugins finish their setup.
+# then run `nvim` once so the Neovim plugins finish their setup.
 
 set -euo pipefail
 
@@ -132,24 +132,6 @@ rm -rf "$HOME/.tmux/.git" "$HOME/.tmux/assets" "$HOME/.tmux"/README*.md
 ln -s "$HOME/.tmux/tmux.conf" "$HOME/.tmux.conf"
 ok "Tmux configuration installed: ~/.tmux (~/.tmux.conf)"
 
-info "Installing TPM (Tmux Plugin Manager) ..."
-git clone --depth 1 https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
-rm -rf "$HOME/.tmux/plugins/tpm/.git"
-
-if command -v tmux &> /dev/null; then
-  info "Installing tmux plugins ..."
-  "$HOME/.tmux/plugins/tpm/bin/install_plugins" > /dev/null 2>&1 || true
-  # TPM reports a failure for the (already present) tpm dir itself,
-  # so verify success by checking that plugins actually got installed.
-  if find "$HOME/.tmux/plugins" -mindepth 1 -maxdepth 1 -type d ! -name tpm | grep -q .; then
-    ok "Tmux plugins installed."
-  else
-    warn "Automatic plugin install failed — start tmux and press Prefix + I."
-  fi
-else
-  warn "tmux not found — after installing it, start tmux and press Prefix + I."
-fi
-
 # --- 2b. WSL: fast clipboard via win32yank ------------------------------------
 
 # Only relevant on WSL; on a server or plain Linux the block is skipped.
@@ -238,7 +220,7 @@ fi
 echo
 echo "Next steps:"
 echo "  1. Start a new $SHELL_NAME session (or run: source $RC_FILE)"
-echo "  2. Run 'tmux'  — plugins: Prefix + I (Prefix = Ctrl+A) if needed"
+echo "  2. Run 'tmux'  (Prefix = Ctrl+A)"
 echo "  3. Run 'nvim'  — then ':MasonInstall clangd cmake-language-server' for C/C++ LSP"
 echo
 echo "Later on, bring everything up to date with a single command:"

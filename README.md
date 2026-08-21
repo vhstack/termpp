@@ -40,7 +40,7 @@ Das Skript übernimmt automatisch:
   Kopie der `~/.bashrc`/`~/.zshrc`)
 - Installation von **Oh My Posh** samt `vhstack.omp.json`-Theme und
   Init-Zeile in `~/.bashrc` bzw. `~/.zshrc`
-- **Tmux-Konfiguration** inklusive TPM und Plugins
+- **Tmux-Konfiguration**
 - Nur unter WSL: **win32yank.exe** für die schnelle Zwischenablage
   ([Details in tmuxpp](https://github.com/vhstack/tmuxpp#win32yankexe-unter-wsl))
 - **Neovim-Konfiguration** inklusive Plugin-Synchronisation (headless)
@@ -49,7 +49,7 @@ Das Skript übernimmt automatisch:
 
 **Später aktualisieren:** Eine bestehende Installation bringt der Befehl
 `update-vhstack` (bzw. [`update-vhstack.sh`](./update-vhstack.sh)) auf den
-aktuellen Stand — Theme, Tmux- und Neovim-Konfiguration samt Plugins, ohne
+aktuellen Stand — Theme, Tmux- und Neovim-Konfiguration samt Neovim-Plugins, ohne
 die `~/.bashrc`/`~/.zshrc` anzufassen. Ersetzte Konfigurationen landen
 vorher in `~/.vhstack-backup-update-<Zeitstempel>`:
 

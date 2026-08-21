@@ -37,7 +37,7 @@ curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-vhstack.s
   плагинов Neovim, тема Prompt, а также копия `~/.bashrc`/`~/.zshrc`)
 - Установку **Oh My Posh** с темой `vhstack.omp.json` и строкой
   инициализации в `~/.bashrc` или `~/.zshrc`
-- **Конфигурацию Tmux**, включая TPM и плагины
+- **Конфигурацию Tmux**
 - Только в WSL: **win32yank.exe** для быстрого буфера обмена
   ([подробности в tmuxpp](https://github.com/vhstack/tmuxpp/blob/main/README.ru.md#win32yankexe-в-wsl))
 - **Конфигурацию Neovim**, включая синхронизацию плагинов (headless)
@@ -46,7 +46,7 @@ curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-vhstack.s
 
 **Обновление позже:** Существующую установку обновляет команда
 `update-vhstack` (или [`update-vhstack.sh`](./update-vhstack.sh)) — тема,
-конфигурации Tmux и Neovim вместе с плагинами, не затрагивая
+конфигурации Tmux и Neovim вместе с плагинами Neovim, не затрагивая
 `~/.bashrc`/`~/.zshrc`. Заменяемые конфигурации предварительно
 сохраняются в `~/.vhstack-backup-update-<метка времени>`:
 
