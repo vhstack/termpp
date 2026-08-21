@@ -19,52 +19,15 @@
 
 ---
 
-## ⚡ Быстрый старт: полная установка vhstack на сервере
+## ⚡ Быстрый старт: полная установка vhstack
 
-Если вы хотите настроить всю рабочую среду vhstack — **Oh My Posh Prompt**,
-**Tmux** ([`vhstack/tmuxpp`](https://github.com/vhstack/tmuxpp)) и **Neovim**
-([`vhstack/nvimpp`](https://github.com/vhstack/nvimpp)) — за один шаг на
-сервере, используйте скрипт [`install-vhstack.sh`](./install-vhstack.sh):
-
-```bash
-curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-vhstack.sh | bash
-```
-
-Скрипт автоматически выполняет:
-
-- **Резервное копирование** существующих конфигураций в
-  `~/.vhstack-backup-<метка времени>` (`~/.tmux*`, `~/.config/nvim`, данные
-  плагинов Neovim, тема Prompt, а также копия `~/.bashrc`/`~/.zshrc`)
-- Установку **Oh My Posh** с темой `vhstack.omp.json` и строкой
-  инициализации в `~/.bashrc` или `~/.zshrc`
-- **Конфигурацию Tmux**
-- Только в WSL: **win32yank.exe** для быстрого буфера обмена
-  ([подробности в tmuxpp](https://github.com/vhstack/tmuxpp/blob/main/README.ru.md#win32yankexe-в-wsl))
-- **Конфигурацию Neovim**, включая синхронизацию плагинов (headless)
-- **Скрипт xssh** в `~/.local/bin` (X11 через Xephyr, см. ниже)
-- **Команду update-vhstack** в `~/.local/bin` для последующих обновлений
-
-**Обновление позже:** Существующую установку обновляет команда
-`update-vhstack` (или [`update-vhstack.sh`](./update-vhstack.sh)) — тема,
-конфигурации Tmux и Neovim вместе с плагинами Neovim, не затрагивая
-`~/.bashrc`/`~/.zshrc`. Заменяемые конфигурации предварительно
-сохраняются в `~/.vhstack-backup-update-<метка времени>`:
+Одна команда устанавливает всю рабочую среду vhstack (Prompt, Tmux, Neovim)
+на сервере. Скрипт и его описание находятся в центральном
+[репозитории vhstack](https://github.com/vhstack/vhstack):
 
 ```bash
-update-vhstack   # или:
-curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/update-vhstack.sh | bash
+curl -sL https://raw.githubusercontent.com/vhstack/vhstack/main/install.sh | bash
 ```
-
-Требования: `git` и `curl`; также должны быть установлены `tmux` и `nvim`:
-
-```bash
-sudo apt install tmux neovim ripgrep clangd   # Debian/Ubuntu
-brew install tmux neovim ripgrep llvm         # macOS
-```
-
-> **Совет:** После установки запустите новую оболочку (или `source ~/.bashrc`) и
-> откройте `tmux` и `nvim` по одному разу. При необходимости выполните в
-> Neovim `:MasonInstall clangd cmake-language-server` для C/C++ LSP.
 
 ---
 
