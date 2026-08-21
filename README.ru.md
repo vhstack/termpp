@@ -38,6 +38,8 @@ curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-vhstack.s
 - Установку **Oh My Posh** с темой `vhstack.omp.json` и строкой
   инициализации в `~/.bashrc` или `~/.zshrc`
 - **Конфигурацию Tmux**, включая TPM и плагины
+- Только в WSL: **win32yank.exe** для быстрого буфера обмена
+  ([подробности в tmuxpp](https://github.com/vhstack/tmuxpp/blob/main/README.ru.md#win32yankexe-в-wsl))
 - **Конфигурацию Neovim**, включая синхронизацию плагинов (headless)
 - **Скрипт xssh** в `~/.local/bin` (X11 через Xephyr, см. ниже)
 - **Команду update-vhstack** в `~/.local/bin` для последующих обновлений

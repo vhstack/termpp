@@ -5,6 +5,7 @@
 # Installs in one go:
 #   1. Oh My Posh prompt with the vhstack theme   (vhstack/termpp)
 #   2. Tmux configuration incl. TPM and plugins   (vhstack/tmuxpp)
+#      on WSL additionally win32yank.exe for a fast clipboard
 #   3. Neovim C/C++ configuration                 (vhstack/nvimpp)
 #   4. xssh helper script (SSH into a Xephyr X-screen, see README)
 #   5. update-vhstack command to ~/.local/bin — run it any time to pull
@@ -147,6 +148,22 @@ if command -v tmux &> /dev/null; then
   fi
 else
   warn "tmux not found — after installing it, start tmux and press Prefix + I."
+fi
+
+# --- 2b. WSL: fast clipboard via win32yank ------------------------------------
+
+# Only relevant on WSL; on a server or plain Linux the block is skipped.
+# install_win32yank.sh ships with tmuxpp (pinned release, checksum-verified,
+# activates nothing if its function probe fails) — a failure here must not
+# abort the rest of the vhstack installation.
+if [ -n "${WSL_DISTRO_NAME:-}" ] || grep -qi microsoft /proc/version 2>/dev/null; then
+  step "WSL detected — installing win32yank.exe (fast clipboard, vhstack/tmuxpp)"
+  if sh "$HOME/.tmux/install_win32yank.sh"; then
+    ok "win32yank.exe set up."
+  else
+    warn "win32yank setup failed — the clipboard falls back to powershell.exe."
+    warn "Retry later with: sh ~/.tmux/install_win32yank.sh"
+  fi
 fi
 
 # --- 3. Neovim configuration (nvimpp) ----------------------------------------

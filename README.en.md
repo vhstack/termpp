@@ -39,6 +39,8 @@ The script automatically takes care of:
 - Installing **Oh My Posh** with the `vhstack.omp.json` theme and the init
   line in `~/.bashrc` or `~/.zshrc`
 - The **Tmux configuration** including TPM and plugins
+- On WSL only: **win32yank.exe** for the fast clipboard
+  ([details in tmuxpp](https://github.com/vhstack/tmuxpp/blob/main/README.en.md#win32yankexe-on-wsl))
 - The **Neovim configuration** including headless plugin synchronization
 - The **xssh script** to `~/.local/bin` (X11 via Xephyr, see below)
 - The **update-vhstack command** to `~/.local/bin` for later updates
