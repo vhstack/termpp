@@ -6,6 +6,8 @@
 
 # 🖥️ Modern Terminal Environment on Windows
 
+[![CI](https://github.com/vhstack/termpp/actions/workflows/ci.yml/badge.svg)](https://github.com/vhstack/termpp/actions/workflows/ci.yml)
+
 This guide walks you through setting up a modern, high-performance, and visually appealing terminal environment on Windows.
 It includes:
 

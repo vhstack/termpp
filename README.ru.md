@@ -6,6 +6,8 @@
 
 # 🖥️ Современная терминальная среда в Windows
 
+[![CI](https://github.com/vhstack/termpp/actions/workflows/ci.yml/badge.svg)](https://github.com/vhstack/termpp/actions/workflows/ci.yml)
+
 В этом руководстве описывается, как создать современную, производительную и эстетически привлекательную терминальную среду в Windows. Она включает в себя:
 
 - **Windows Terminal** (рекомендуется Preview-версия)

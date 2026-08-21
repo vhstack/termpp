@@ -32,13 +32,16 @@ if grep -q "oh-my-posh init" "$RC_FILE"; then
 fi
 
 # 5. Füge die eval-Zeile nur hinzu, wenn sie noch nicht existiert
+# shellcheck disable=SC2016  # $(...) soll woertlich in die rc-Datei
 INIT_LINE='eval "$(~/.local/bin/oh-my-posh init '"$SHELL_NAME"' --config ~/.config/ohmyposh/vhstack.omp.json)"'
 
 # 6. Konfiguriere vhstack-Theme
 if ! grep -Fxq "$INIT_LINE" "$RC_FILE"; then
-  echo "" >> "$RC_FILE"
-  echo "# oh-my-posh vhstack/termpp theme" >> "$RC_FILE"
-  echo "$INIT_LINE" >> "$RC_FILE"
+  {
+    echo ""
+    echo "# oh-my-posh vhstack/termpp theme"
+    echo "$INIT_LINE"
+  } >> "$RC_FILE"
   echo "✅ Oh My Posh init line has been added to $RC_FILE."
 else
   echo "ℹ️  Init line already present in $RC_FILE."

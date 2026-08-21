@@ -6,6 +6,8 @@
 
 # 🖥️ Moderne Terminal-Arbeitsumgebung unter Windows
 
+[![CI](https://github.com/vhstack/termpp/actions/workflows/ci.yml/badge.svg)](https://github.com/vhstack/termpp/actions/workflows/ci.yml)
+
 Diese Anleitung beschreibt, wie du dir eine moderne, performante und 
 optisch ansprechende Terminal-Umgebung unter Windows aufbaust. Sie 
 besteht aus:
