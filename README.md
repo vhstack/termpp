@@ -6,6 +6,8 @@
 
 # 🖥️ Moderne Terminal-Arbeitsumgebung unter Windows
 
+[![Version](https://img.shields.io/github/v/tag/vhstack/termpp?label=version&sort=semver&color=8aadf4)](https://github.com/vhstack/termpp/tags)
+
 [![CI](https://github.com/vhstack/termpp/actions/workflows/ci.yml/badge.svg)](https://github.com/vhstack/termpp/actions/workflows/ci.yml)
 
 Diese Anleitung beschreibt, wie du dir eine moderne, performante und 
