@@ -20,7 +20,7 @@ It includes:
 The guide is split into two parts: **Part 1** sets up the terminal locally 
 on Windows, **Part 2** sets up the prompt on the remote server.
 
-![Screenshot](assets/screenshot.jpg)
+![termpp – the prompt comes alive: git status, errors, runtime](assets/prompt.gif)
 
 ---
 
@@ -89,6 +89,9 @@ Configuration is done via the `settings.json` file:
 4. Replace or add your configuration.
 
 A suitable template is included in this repository: [`settings.json`](./settings.json)
+
+Matching wallpaper: [`assets/vhstack.bg.jpg`](./assets/vhstack.bg.jpg) – add it in
+`settings.json` via `"backgroundImage"` (start with `"backgroundImageOpacity": 0.95`).
 
 In the `settings.json`, you can define custom SSH profiles under `profiles.list[]` for key-based 
 or password-based access to remote servers.

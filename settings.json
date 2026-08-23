@@ -144,9 +144,12 @@
             {
                 "face": "Cascadia Code NF"
             },
-			"antialiasingMode": "cleartype", 
+			"antialiasingMode": "cleartype",
 			"historySize": 50000,
             "opacity": 100
+            // Passendes Wallpaper (assets/vhstack.bg.jpg) — Pfad anpassen und einkommentieren:
+            // ,"backgroundImage": "C:\\Users\\<name>\\Pictures\\vhstack.bg.jpg",
+            // "backgroundImageOpacity": 0.95
         },
         "list": 
         [

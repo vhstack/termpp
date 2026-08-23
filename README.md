@@ -21,7 +21,7 @@ besteht aus:
 Die Anleitung gliedert sich in zwei Teile: **Teil 1** richtet das Terminal 
 lokal unter Windows ein, **Teil 2** den Prompt auf dem Remote-Server.
 
-![Screenshot](assets/screenshot.jpg)
+![termpp – der Prompt lebt: Git-Status, Fehler, Laufzeit](assets/prompt.gif)
 
 ---
 
@@ -93,6 +93,9 @@ Die Anpassung erfolgt über die Datei `settings.json`:
 4. Ersetze oder ergänze den Inhalt mit deiner Konfiguration
 
 Eine passende Vorlage liegt in diesem Repository: [`settings.json`](./settings.json)
+
+Passendes Hintergrundbild: [`assets/vhstack.bg.jpg`](./assets/vhstack.bg.jpg) – in
+`settings.json` via `"backgroundImage"` einbinden (Startwert: `"backgroundImageOpacity": 0.95`).
 
 Du kannst in der `settings.json` Datei von Windows Terminal eigene SSH-Profile unter 
 `profiles.list[]` definieren, mit denen du dich entweder per Public-Key oder Passwort 

@@ -19,7 +19,7 @@
 Руководство состоит из двух частей: **часть 1** — настройка терминала локально 
 в Windows, **часть 2** — настройка Prompt на удалённом сервере.
 
-![Скриншот](assets/screenshot.jpg)
+![termpp — живой prompt: статус git, ошибки, время выполнения](assets/prompt.gif)
 
 ---
 
@@ -87,6 +87,9 @@ Windows Terminal доступен бесплатно в Microsoft Store:
 4. Добавьте или измените нужные параметры
 
 Подходящий шаблон находится в этом репозитории: [`settings.json`](./settings.json)
+
+Подходящие обои: [`assets/vhstack.bg.jpg`](./assets/vhstack.bg.jpg) — подключаются в
+`settings.json` через `"backgroundImage"` (для начала `"backgroundImageOpacity": 0.95`).
 
 В `profiles.list[]` можно создавать профили SSH для подключения к удалённым серверам:
 
