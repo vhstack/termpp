@@ -21,9 +21,9 @@ Type "R=$FH/projekte/stacktop; rm -rf $R $SP/stacktop-remote.git; mkdir -p $FH/p
 Enter
 Type "cp -r ${VHS_APP_DIR:-$HOME/projekte/stacktop} $R; rm -rf $R/build $R/stacktop"
 Enter
-Type "git -C $R init -qb main && git -C $R config user.name vh && git -C $R config user.email vh@stack.invalid"
+Type "git -C $R init -qb main && git -C $R config user.name vh && git -C $R config user.email vh@stack"
 Enter
-Type "git -C $R add -A && git -C $R commit -qm 'stacktop: Grundgeruest'"
+Type "git -C $R add -A && git -C $R commit -qm 'stacktop: Grundgeruest' && git -C $R config core.pager cat"
 Enter
 Type "git init -q --bare $SP/stacktop-remote.git && git -C $R remote add origin $SP/stacktop-remote.git && git -C $R push -qu origin main 2>/dev/null"
 Enter
