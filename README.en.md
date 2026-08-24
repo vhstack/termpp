@@ -154,6 +154,7 @@ xssh user@server.address
 |`Shift + ← / →` | Switch between Windows Terminal tabs |
 |`Alt + ← / →` | Switch between Tmux windows |
 |`Ctrl + ← / →` | Switch between Neovim buffers |
+|`Shift + Enter` | Insert newline without submitting |
 
 These settings and the color scheme are aligned with my Neovim and Tmux configurations:
 

@@ -160,6 +160,7 @@ xssh benutzername@serveradresse
 | `Shift + ← / →`       | Wechsel zwischen Windows Terminal Tabs |
 | `Alt + ← / →`         | Wechsel zwischen Tmux-Fenstern         |
 | `Ctrl + ← / →`        | Wechsel zwischen Neovim-Buffern        |
+| `Shift + Enter`       | Zeilenumbruch statt Absenden           |
 
 Diese Einstellungen und das Farbschema sind auf meine Konfigurationen 
 von Neovim und Tmux abgestimmt.

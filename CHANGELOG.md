@@ -8,6 +8,15 @@ Für eine Konfigurationssammlung gilt:
 - **minor** — neue Funktionen, abwärtskompatibel
 - **patch** — Fehlerbehebungen, Feinschliff
 
+## [1.3.0] — 2026-08-24
+
+### Hinzugefügt
+
+- Keybinding Shift+Enter in `settings.json`: Zeilenumbruch statt Absenden
+  in Eingabezeilen (`sendInput` mit ESC+CR), funktioniert unabhängig vom
+  Tastatur-Protokoll des laufenden Programms
+- Tastenkürzel-Tabellen in allen drei READMEs um `Shift + Enter` ergänzt
+
 ## [1.2.0] — 2026-08-22
 
 Erstes getaggtes Release. Der Stand entspricht der bisherigen Entwicklung auf
@@ -32,4 +41,5 @@ Vor diesem Tag wurde nicht versioniert. Die Startnummer spiegelt den Reifegrad
 des Projekts, nicht eine Folge früherer Releases — v1.0.0 bis v1.1.x haben nie
 existiert.
 
+[1.3.0]: https://github.com/vhstack/termpp/releases/tag/v1.3.0
 [1.2.0]: https://github.com/vhstack/termpp/releases/tag/v1.2.0

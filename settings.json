@@ -58,11 +58,20 @@
             "id": "User.scrollDownPage"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "scrollUp"
             },
             "id": "User.scrollUp.0"
+        },
+        {
+            // Zeilenumbruch statt Absenden mit Shift+Enter (sendet ESC+CR).
+            "command":
+            {
+                "action": "sendInput",
+                "input": "\u001b\r"
+            },
+            "id": "User.sendInput.ShiftEnter"
         }
     ],
     "copyFormatting": "none",
@@ -127,6 +136,10 @@
         {
             "id": "User.scrollUp.0",
             "keys": "shift+up"
+        },
+        {
+            "id": "User.sendInput.ShiftEnter",
+            "keys": "shift+enter"
         }
     ],
     "newTabMenu": 

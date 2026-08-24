@@ -151,6 +151,7 @@ xssh username@server.address
 | `Shift + ← / →`      | Переключение вкладок в Windows Terminal   |
 | `Alt + ← / →`        | Переключение окон Tmux                    |
 | `Ctrl + ← / →`       | Переключение буферов Neovim               |
+| `Shift + Enter`      | Перенос строки без отправки               |
 
 Эти настройки и цветовая схема согласованы с моими конфигурациями Neovim и Tmux:
 
