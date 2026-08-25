@@ -198,15 +198,15 @@ curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/truecolor-test.sh
 #### Быстрая установка
 
 Тему vhstack-Prompt можно установить автоматически скриптом
-[`install-termpp.sh`](./install-termpp.sh) — выполните его прямо в терминале
+[`install.sh`](./install.sh) — выполните его прямо в терминале
 (Bash или Zsh):
 
 ```bash
-curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-termpp.sh | bash
+curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install.sh | bash
 ```
 
 ```zsh
-curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-termpp.sh | zsh
+curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install.sh | zsh
 ```
 
 Скрипт автоматически:

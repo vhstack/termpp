@@ -210,15 +210,15 @@ Mit **Oh My Posh** erhältst du:
 #### Schnelle Installation
 
 Das vhstack-Prompt-Theme installierst du automatisch mit dem Skript
-[`install-termpp.sh`](./install-termpp.sh) — direkt im Terminal ausführen
+[`install.sh`](./install.sh) — direkt im Terminal ausführen
 (Bash oder Zsh):
 
 ```bash
-curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-termpp.sh | bash
+curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install.sh | bash
 ```
 
 ```zsh
-curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-termpp.sh | zsh
+curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install.sh | zsh
 ```
 
 Das Skript übernimmt automatisch:

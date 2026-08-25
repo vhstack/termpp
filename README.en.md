@@ -200,15 +200,15 @@ A modern, informative Bash prompt can make a big difference. Oh My Posh provides
 #### Quick Installation
 
 Install the vhstack prompt theme automatically with the script
-[`install-termpp.sh`](./install-termpp.sh) — run it directly in the terminal
+[`install.sh`](./install.sh) — run it directly in the terminal
 (Bash or Zsh):
 
 ```bash
-curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-termpp.sh | bash
+curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install.sh | bash
 ```
 
 ```zsh
-curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install-termpp.sh | zsh
+curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install.sh | zsh
 ```
 
 The script will:

@@ -11,4 +11,4 @@ jobs:
       - uses: actions/checkout@v4
       # Explizite Dateiliste statt Glob: xssh hat keine .sh-Endung, und neue
       # Skripte sollen bewusst aufgenommen werden, nicht zufaellig.
-      - run: shellcheck install-termpp.sh truecolor-test.sh xssh
+      - run: shellcheck install.sh truecolor-test.sh xssh

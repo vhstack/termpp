@@ -8,6 +8,10 @@ Für eine Konfigurationssammlung gilt:
 - **minor** — neue Funktionen, abwärtskompatibel
 - **patch** — Fehlerbehebungen, Feinschliff
 
+## [1.3.1] — 2026-08-25
+
+- Installer von `install-termpp.sh` in `install.sh` umbenannt (einheitlich mit vhstack)
+
 ## [1.3.0] — 2026-08-24
 
 ### Hinzugefügt
@@ -31,7 +35,7 @@ Erstes getaggtes Release. Der Stand entspricht der bisherigen Entwicklung auf
   X-Anwendungen, deren Dialoge unter WSLg falsch positioniert werden;
   Xephyr wird nach der letzten Sitzung automatisch beendet
 - `truecolor-test.sh` zur Prüfung der Farbtiefe des Terminals
-- `install-termpp.sh` für die Einrichtung unter Windows
+- `install-termpp.sh` für die Einrichtung unter Windows (seit 1.3.1: `install.sh`)
 - Versionskennung in `VERSION`, vom vhstack-Installer per curl gelesen —
   termpp wird nicht geklont, sondern dateiweise verteilt
 
@@ -41,5 +45,6 @@ Vor diesem Tag wurde nicht versioniert. Die Startnummer spiegelt den Reifegrad
 des Projekts, nicht eine Folge früherer Releases — v1.0.0 bis v1.1.x haben nie
 existiert.
 
+[1.3.1]: https://github.com/vhstack/termpp/releases/tag/v1.3.1
 [1.3.0]: https://github.com/vhstack/termpp/releases/tag/v1.3.0
 [1.2.0]: https://github.com/vhstack/termpp/releases/tag/v1.2.0
