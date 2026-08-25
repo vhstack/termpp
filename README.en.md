@@ -4,7 +4,7 @@
   <a href="README.ru.md"><img src="assets/flag-ru.png" width="16" height="12" alt="Русский" title="Переключиться на русскую версию" /></a>
 </p>
 
-# 🖥️ Modern Terminal Environment on Windows
+# termpp – terminal, Nerd Font and prompt
 
 [![Version](https://img.shields.io/github/v/tag/vhstack/termpp?label=version&sort=semver&color=8aadf4)](https://github.com/vhstack/termpp/tags)
 
@@ -13,7 +13,7 @@
 This guide walks you through setting up a modern, high-performance, and visually appealing terminal environment on Windows.
 It includes:
 
-- **Windows Terminal** (Preview version recommended)
+- **Windows Terminal**
 - A **Nerd Font** (e.g., Cascadia Code NF)
 - A modern **Bash prompt via Oh My Posh**
 
@@ -22,35 +22,27 @@ on Windows, **Part 2** sets up the prompt on the remote server.
 
 ![termpp – the prompt comes alive: git status, errors, runtime](assets/prompt.gif)
 
----
-
-## ⚡ Quick Start: vhstack Full Install
-
-A single command sets up the entire vhstack environment (prompt, Tmux, Neovim)
-on your server. The script and its documentation live in the central
-[vhstack repository](https://github.com/vhstack/vhstack):
+termpp is part of [vhstack](https://github.com/vhstack/vhstack). There, a single command sets up prompt, tmux and Neovim together:
 
 ```bash
 curl -sL https://raw.githubusercontent.com/vhstack/vhstack/main/install.sh | bash
 ```
-
----
 
 ## 🪟 Part 1: Windows Terminal (local)
 
 ### Terminal Choice
 
 There are many terminal options on Windows. After testing several options, 
-I went with [**Windows Terminal**](https://aka.ms/terminal-preview) because it's:
+I went with [**Windows Terminal**](https://aka.ms/terminal) because it's:
 
 - Fast
 - Modern
 - Highly configurable
 - Lightweight
 
-I use the **Preview version** to access new features early. Windows Terminal 
-is available for free from the Microsoft Store:
+Windows Terminal is free in the Microsoft Store; the Preview build ships new features earlier:
 
+- [Windows Terminal](https://apps.microsoft.com/detail/9n0dx20hk701)
 - [Windows Terminal Preview](https://apps.microsoft.com/detail/9n8g5rfz9xk3)
 
 ### Font: Nerd Font with Icon Support
@@ -197,7 +189,7 @@ A modern, informative Bash prompt can make a big difference. Oh My Posh provides
 
 > Important: Setup is **on the remote server under Bash**, **not locally**.
 
-#### Quick Installation
+#### Installation via Script
 
 Install the vhstack prompt theme automatically with the script
 [`install.sh`](./install.sh) — run it directly in the terminal
@@ -264,10 +256,4 @@ Your prompt will load automatically on login.
 
 ---
 
-## 🎯 Final Words
-
-This setup gives you a sleek, fast, and visually pleasing environment for daily work.
-
-All components are modular—customize themes, fonts, keybindings, and colors.
-
-Enjoy your new setup and happy hacking! 🚀
+MIT License · part of [vhstack](https://github.com/vhstack/vhstack)

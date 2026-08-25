@@ -4,7 +4,7 @@
   <a href="README.ru.md"><img src="assets/flag-ru.png" width="16" height="12" alt="Русский" title="Переключиться на русскую версию" /></a>
 </p>
 
-# 🖥️ Современная терминальная среда в Windows
+# termpp — терминал, Nerd Font и prompt
 
 [![Version](https://img.shields.io/github/v/tag/vhstack/termpp?label=version&sort=semver&color=8aadf4)](https://github.com/vhstack/termpp/tags)
 
@@ -12,7 +12,7 @@
 
 В этом руководстве описывается, как создать современную, производительную и эстетически привлекательную терминальную среду в Windows. Она включает в себя:
 
-- **Windows Terminal** (рекомендуется Preview-версия)
+- **Windows Terminal**
 - **Nerd Font** (например, Cascadia Code NF)
 - современный **Bash Prompt с Oh My Posh**
 
@@ -21,34 +21,26 @@
 
 ![termpp — живой prompt: статус git, ошибки, время выполнения](assets/prompt.gif)
 
----
-
-## ⚡ Быстрый старт: полная установка vhstack
-
-Одна команда устанавливает всю рабочую среду vhstack (Prompt, Tmux, Neovim)
-на сервере. Скрипт и его описание находятся в центральном
-[репозитории vhstack](https://github.com/vhstack/vhstack):
+termpp входит в [vhstack](https://github.com/vhstack/vhstack). Там одна команда настраивает prompt, tmux и Neovim сразу вместе:
 
 ```bash
 curl -sL https://raw.githubusercontent.com/vhstack/vhstack/main/install.sh | bash
 ```
 
----
-
 ## 🪟 Часть 1: Windows Terminal (локально)
 
 ### Выбор терминала
 
-Существует множество вариантов терминалов для Windows. После многочисленных тестов я выбрал [**Windows Terminal**](https://aka.ms/terminal-preview) – он:
+Существует множество вариантов терминалов для Windows. После многочисленных тестов я выбрал [**Windows Terminal**](https://aka.ms/terminal) – он:
 
 - быстрый  
 - современный  
 - гибко настраиваемый  
 - легковесный  
 
-Я использую **Preview-версию**, чтобы опробовать новые функции раньше всех. 
-Windows Terminal доступен бесплатно в Microsoft Store:
+Windows Terminal бесплатно доступен в Microsoft Store; Preview-версия получает новые функции раньше:
 
+- [Windows Terminal](https://apps.microsoft.com/detail/9n0dx20hk701)
 - [Windows Terminal Preview](https://apps.microsoft.com/detail/9n8g5rfz9xk3)
 
 ### Шрифт: Nerd Font с поддержкой иконок
@@ -195,7 +187,7 @@ curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/truecolor-test.sh
 
 > Важно: настройка производится **только** на удалённом сервере в Bash, **не локально**.
 
-#### Быстрая установка
+#### Установка скриптом
 
 Тему vhstack-Prompt можно установить автоматически скриптом
 [`install.sh`](./install.sh) — выполните его прямо в терминале
@@ -262,8 +254,4 @@ curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install.sh | zsh
 
 ---
 
-## 🎯 Заключение
-
-С этой средой вы получите лёгкую, быструю и эстетичную конфигурацию для ежедневной работы. Все компоненты модульны — темы, шрифты, горячие клавиши и цвета легко настраиваются под вас.  
-
-Приятной настройки и happy hacking! 🚀
+Лицензия MIT · часть [vhstack](https://github.com/vhstack/vhstack)
