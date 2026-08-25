@@ -19,7 +19,7 @@ Type "SP=${VHS_DEMO_DIR:-$HOME/.cache/vhstack-demo}; FH=$SP/fakehome"
 Enter
 Type "R=$FH/projekte/stacktop; rm -rf $R $SP/stacktop-remote.git; mkdir -p $FH/projekte"
 Enter
-Type "cp -r ${VHS_APP_DIR:-$HOME/projekte/stacktop} $R; rm -rf $R/build $R/stacktop"
+Type "cp -r ${VHS_APP_DIR:-$HOME/projekte/stacktop} $R; rm -rf $R/build $R/Debug $R/stacktop"
 Enter
 Type "git -C $R init -qb main && git -C $R config user.name vh && git -C $R config user.email vh@stack"
 Enter
