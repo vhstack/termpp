@@ -82,7 +82,7 @@ Configuration is done via the `settings.json` file:
 
 A suitable template is included in this repository: [`settings.json`](./settings.json)
 
-Matching wallpaper: [`assets/vhstack.bg.jpg`](./assets/vhstack.bg.jpg) – add it in
+Matching wallpaper: [`assets/vhstack_bg.jpg`](./assets/vhstack_bg.jpg) – add it in
 `settings.json` via `"backgroundImage"` (start with `"backgroundImageOpacity": 0.95`).
 
 In the `settings.json`, you can define custom SSH profiles under `profiles.list[]` for key-based 

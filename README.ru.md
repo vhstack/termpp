@@ -80,7 +80,7 @@ Windows Terminal бесплатно доступен в Microsoft Store; Preview
 
 Подходящий шаблон находится в этом репозитории: [`settings.json`](./settings.json)
 
-Подходящие обои: [`assets/vhstack.bg.jpg`](./assets/vhstack.bg.jpg) — подключаются в
+Подходящие обои: [`assets/vhstack_bg.jpg`](./assets/vhstack_bg.jpg) — подключаются в
 `settings.json` через `"backgroundImage"` (для начала `"backgroundImageOpacity": 0.95`).
 
 В `profiles.list[]` можно создавать профили SSH для подключения к удалённым серверам:

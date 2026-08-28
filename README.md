@@ -86,7 +86,7 @@ Die Anpassung erfolgt über die Datei `settings.json`:
 
 Eine passende Vorlage liegt in diesem Repository: [`settings.json`](./settings.json)
 
-Passendes Hintergrundbild: [`assets/vhstack.bg.jpg`](./assets/vhstack.bg.jpg) – in
+Passendes Hintergrundbild: [`assets/vhstack_bg.jpg`](./assets/vhstack_bg.jpg) – in
 `settings.json` via `"backgroundImage"` einbinden (Startwert: `"backgroundImageOpacity": 0.95`).
 
 Du kannst in der `settings.json` Datei von Windows Terminal eigene SSH-Profile unter 

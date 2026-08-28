@@ -1,7 +1,7 @@
 # Terminal-Wallpaper 2560x1600 im vhstack-Logo-Stil, Catppuccin-Mocha-Palette.
-# Erzeugt vhstack.bg.svg; JPG daraus rendern, z. B.:
+# Erzeugt vhstack_bg.svg; JPG daraus rendern, z. B.:
 #   chromium --headless=new --screenshot=bg.png --window-size=2560,1600 file://.../bg.html
-#   python3 -c "from PIL import Image; Image.open('bg.png').convert('RGB').save('vhstack.bg.jpg', quality=92)"
+#   python3 -c "from PIL import Image; Image.open('bg.png').convert('RGB').save('vhstack_bg.jpg', quality=92)"
 import os
 import numpy as np, os
 from scipy.spatial import Delaunay
@@ -80,5 +80,5 @@ svg.append(f'<circle cx="{CX}" cy="{CY}" r="{R}" fill="url(#rim)"/>')
 # vignette for readability
 svg.append(f'<rect width="{W}" height="{H}" fill="#11111b" fill-opacity="0.30"/>')
 svg.append('</svg>')
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'vhstack.bg.svg')
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'vhstack_bg.svg')
 open(OUT,'w').write("\n".join(svg)); print("written", OUT)
