@@ -8,6 +8,11 @@ Für eine Konfigurationssammlung gilt:
 - **minor** — neue Funktionen, abwärtskompatibel
 - **patch** — Fehlerbehebungen, Feinschliff
 
+## [1.4.0] — 2026-09-04
+
+- Neues vhstack-Logo und neues Terminal-Wallpaper (`assets/vhstack_bg.jpg`)
+- READMEs vereinheitlicht
+
 ## [1.3.1] — 2026-08-25
 
 - Installer von `install-termpp.sh` in `install.sh` umbenannt (einheitlich mit vhstack)
@@ -45,6 +50,7 @@ Vor diesem Tag wurde nicht versioniert. Die Startnummer spiegelt den Reifegrad
 des Projekts, nicht eine Folge früherer Releases — v1.0.0 bis v1.1.x haben nie
 existiert.
 
+[1.4.0]: https://github.com/vhstack/termpp/releases/tag/v1.4.0
 [1.3.1]: https://github.com/vhstack/termpp/releases/tag/v1.3.1
 [1.3.0]: https://github.com/vhstack/termpp/releases/tag/v1.3.0
 [1.2.0]: https://github.com/vhstack/termpp/releases/tag/v1.2.0
