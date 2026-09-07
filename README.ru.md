@@ -53,6 +53,14 @@ Windows Terminal бесплатно доступен в Microsoft Store; Preview
 - Поддержка **лигатур**  
 - Идеально подходит для терминалов разработчика
 
+Оба вариативных шрифта (Regular и Italic) лежат без изменений в
+[`assets/fonts/`](assets/fonts/), взяты из релиза Microsoft
+[v2407.24](https://github.com/microsoft/cascadia-code/releases/tag/v2407.24).
+Для установки скачайте оба файла `.ttf` и выберите «Установить» в контекстном
+меню или скопируйте их в `%LOCALAPPDATA%\Microsoft\Windows\Fonts`.
+Шрифт распространяется по лицензии SIL Open Font License 1.1, см.
+[`assets/fonts/README.md`](assets/fonts/README.md).
+
 > После установки шрифт можно выбрать в Windows Terminal через `settings.json` как основной.
 
 Примеры лигатур:
@@ -254,4 +262,5 @@ curl -sL https://raw.githubusercontent.com/vhstack/termpp/main/install.sh | zsh
 
 ---
 
-Лицензия MIT · часть [vhstack](https://github.com/vhstack/vhstack)
+Лицензия MIT · часть [vhstack](https://github.com/vhstack/vhstack)  
+Исключение: файлы шрифтов в `assets/fonts/` (Cascadia Code NF, © Microsoft) распространяются по лицензии [SIL Open Font License 1.1](assets/fonts/LICENSE-CascadiaCode.txt).

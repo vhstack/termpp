@@ -8,6 +8,18 @@ Für eine Konfigurationssammlung gilt:
 - **minor** — neue Funktionen, abwärtskompatibel
 - **patch** — Fehlerbehebungen, Feinschliff
 
+## [1.5.0] — 2026-09-07
+
+### Hinzugefügt
+
+- Schriftart Cascadia Code NF (Regular und Italic, Variable Fonts) unter
+  `assets/fonts/`, unverändert aus dem Microsoft-Release v2407.24 übernommen
+  und per SHA-256 dokumentiert
+- `assets/fonts/LICENSE-CascadiaCode.txt` und `FONTLOG-CascadiaCode.txt`;
+  die Fonts stehen unter SIL OFL 1.1 und sind von der MIT-Lizenz des
+  Repositories ausgenommen (Hinweis in `LICENSE` und in den READMEs)
+- `.gitattributes`: TTF-Dateien als binär markiert
+
 ## [1.4.0] — 2026-09-04
 
 - Neues vhstack-Logo und neues Terminal-Wallpaper (`assets/vhstack_bg.jpg`)
@@ -50,6 +62,7 @@ Vor diesem Tag wurde nicht versioniert. Die Startnummer spiegelt den Reifegrad
 des Projekts, nicht eine Folge früherer Releases — v1.0.0 bis v1.1.x haben nie
 existiert.
 
+[1.5.0]: https://github.com/vhstack/termpp/releases/tag/v1.5.0
 [1.4.0]: https://github.com/vhstack/termpp/releases/tag/v1.4.0
 [1.3.1]: https://github.com/vhstack/termpp/releases/tag/v1.3.1
 [1.3.0]: https://github.com/vhstack/termpp/releases/tag/v1.3.0

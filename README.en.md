@@ -55,6 +55,14 @@ I recommend [**Cascadia Code NF**](https://github.com/microsoft/cascadia-code/re
 - **Ligature** support
 - Perfect for developer terminals
 
+Both variable fonts (Regular and Italic) are included unmodified in
+[`assets/fonts/`](assets/fonts/), taken from the Microsoft release
+[v2407.24](https://github.com/microsoft/cascadia-code/releases/tag/v2407.24).
+To install, download the two `.ttf` files and choose "Install" from the
+context menu, or copy them to `%LOCALAPPDATA%\Microsoft\Windows\Fonts`.
+The font is licensed under the SIL Open Font License 1.1, see
+[`assets/fonts/README.md`](assets/fonts/README.md).
+
 > After installing, set the font as default in Windows Terminal (e.g., via `settings.json`).
 
 Ligature examples:
@@ -256,4 +264,5 @@ Your prompt will load automatically on login.
 
 ---
 
-MIT License · part of [vhstack](https://github.com/vhstack/vhstack)
+MIT License · part of [vhstack](https://github.com/vhstack/vhstack)  
+Exception: the font files in `assets/fonts/` (Cascadia Code NF, © Microsoft) are licensed under the [SIL Open Font License 1.1](assets/fonts/LICENSE-CascadiaCode.txt).

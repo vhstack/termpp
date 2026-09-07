@@ -58,6 +58,14 @@ werden, brauchst du eine **Nerd Font**. Ich empfehle
 - Unterstützt **Ligaturen**
 - Perfekt für Entwicklerterminals
 
+Beide Variable Fonts (Regular und Italic) liegen unverändert in
+[`assets/fonts/`](assets/fonts/), übernommen aus dem Microsoft-Release
+[v2407.24](https://github.com/microsoft/cascadia-code/releases/tag/v2407.24).
+Zur Installation die beiden `.ttf`-Dateien herunterladen, per Rechtsklick
+„Installieren" wählen oder nach `%LOCALAPPDATA%\Microsoft\Windows\Fonts`
+kopieren. Die Schrift steht unter der SIL Open Font License 1.1, siehe
+[`assets/fonts/README.md`](assets/fonts/README.md).
+
 > Nach der Installation kann die Schriftart in Windows Terminal 
 > (z. B. via `settings.json`) als Standard gesetzt werden. 
 
@@ -266,4 +274,5 @@ Dein Shell-Prompt wird nun automatisch bei jeder Anmeldung (login) geladen.
 
 ---
 
-MIT-Lizenz · Teil von [vhstack](https://github.com/vhstack/vhstack)
+MIT-Lizenz · Teil von [vhstack](https://github.com/vhstack/vhstack)  
+Ausgenommen: die Schriftdateien in `assets/fonts/` (Cascadia Code NF, © Microsoft) stehen unter der [SIL Open Font License 1.1](assets/fonts/LICENSE-CascadiaCode.txt).
